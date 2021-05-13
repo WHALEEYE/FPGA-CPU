@@ -1,0 +1,7 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTECH_programe_projects/CO_project/decoder/decoder.srcs/sources_1/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Idecode32
+INFO: [VRFC 10-2458] undeclared symbol address, assumed default net type wire [D:/SUSTECH_programe_projects/CO_project/decoder/decoder.srcs/sources_1/new/Decoder.v:55]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTECH_programe_projects/CO_project/decoder/decoder.srcs/sim_1/new/Decoder_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module idcode32_sim
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTECH_programe_projects/CO_project/decoder/decoder.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

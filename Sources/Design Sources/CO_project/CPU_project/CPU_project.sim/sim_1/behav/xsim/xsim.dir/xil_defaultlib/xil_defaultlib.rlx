@@ -1,0 +1,11 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sim_1/new/MemOrIO_tb.v,1620900175,verilog,,,,MemOrIO_tb,,,../../../../CPU_project.srcs/sources_1/ip/cpuclk,,,,,
+D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sim_1/new/cpuclk_tb.v,1620831590,verilog,,,,cpuclk_tb,,,../../../../CPU_project.srcs/sources_1/ip/cpuclk,,,,,
+D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk.v,1620831476,verilog,,D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sim_1/new/cpuclk_tb.v,,cpuclk,,,../../../../CPU_project.srcs/sources_1/ip/cpuclk,,,,,
+D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk_clk_wiz.v,1620831476,verilog,,D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk.v,,cpuclk_clk_wiz,,,../../../../CPU_project.srcs/sources_1/ip/cpuclk,,,,,
+D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sources_1/new/IO.v,1620913366,verilog,,D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sim_1/new/MemOrIO_tb.v,,MemOrIO,,,../../../../CPU_project.srcs/sources_1/ip/cpuclk,,,,,
+D:/SUSTECH_programe_projects/CO_project/IFetch32/IFetch32.srcs/sources_1/new/IFetc32.v,1620798008,verilog,,,,Ifetc32,,,../../../../CPU_project.srcs/sources_1/ip/cpuclk,,,,,
