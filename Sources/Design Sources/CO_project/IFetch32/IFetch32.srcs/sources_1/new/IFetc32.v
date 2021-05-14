@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Ifetc32(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jr,Zero,clock,reset,link_addr,pco);
+module Ifetc32(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBranch,Jmp,Jal,Jr,Zero,clock,reset,link_addr,TheWorld);
     // input
     //from ALU
     input[31:0]  Addr_result;   // the calculated address from ALU
@@ -34,12 +34,12 @@ module Ifetc32(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBran
     input        Jr;
     input        clock;
     input        reset;     //1'b1 is 'reset' enable, 1'b0 means 'reset' disable. while 'reset' enable, the value of PC is set as 32'h0000_0000
+    input        TheWorld;
 
     // output
     output[31:0] Instruction;            
-    output[31:0] branch_base_addr;
-    output reg[31:0] link_addr;
-    output[31:0] pco;      // bind with the new output port 'pco' in IFetc32 
+    output[31:0] branch_base_addr;      // (pc+4) to ALU which is used by branch type instruction
+    output reg[31:0] link_addr;         // (pc+4) to decoder which is used by jal 
     
     //Calculate PC
     reg[31:0] PC, Next_PC;
@@ -51,12 +51,13 @@ module Ifetc32(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBran
             Next_PC = Addr_result * 4;
         else if(Jr == 1)
             Next_PC = Read_data_1 * 4;
+        else if(TheWorld == 1)
+            Next_PC = Next_PC;
         else 
             Next_PC = PC + 32'h0000_0004;
     end
 
     assign branch_base_addr = PC + 32'h0000_0004;
-    assign pco = PC;
 
     always @(negedge clock, posedge reset)
     begin
@@ -66,14 +67,18 @@ module Ifetc32(Instruction,branch_base_addr,Addr_result,Read_data_1,Branch,nBran
         end
         else
         begin
-            if((Jal | Jmp) == 0)
-            begin
-                PC <= Next_PC;
-            end
-            else
+            if((Jal | Jmp) == 1)
             begin
                 link_addr = (PC + 4'b0100) / 4;
                 PC <= {4'b0000, Instruction[25:0], 2'b00};
+            end
+            else if(TheWorld == 1)
+            begin
+                PC <= PC;
+            end
+            else
+            begin
+                PC <= Next_PC;
             end
             //PC <= ((Jal | Jmp) == 0) ? ((Jr == 0) ? ((branch_ctr == 0 ? (branch_base_addr) : (Addr_result * 4))) : (Read_data_1 * 4)) : ({PC[31:28], Instruction[25:0], 2'b00});
             //link_addr = ((Jal | Jmp) == 0) ? link_addr : (PC + 4'b0100) / 4;

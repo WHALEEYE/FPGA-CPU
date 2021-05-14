@@ -21,7 +21,7 @@
 
 
 module Idecode32(read_data_1, read_data_2, Instruction, read_data, ALU_result, Jal, RegWrite, MemtoReg, RegDst, 
-imme_extend, clock, reset, opcplus4, io_write_data, io_read_data, output_mode, IORead, IOWrite);
+imme_extend, clock, reset, opcplus4, io_write_data, io_read_data, output_mode, IORead, IOWrite, TheWorld);
 // input 
 input[31:0]  Instruction;
 input[31:0]  read_data;
@@ -41,7 +41,7 @@ output reg[31:0] io_read_data;
 output reg[1:0] output_mode;
 output reg IORead; // 1 indicates I/O read
 output reg IOWrite; // 1 indicates I/O write
-//output TheWorld; // 1s stop
+output reg TheWorld; // 1s stop
 
 // decode the instruction
 wire[5:0] opcode;
@@ -67,16 +67,33 @@ wire[4:0] readR_1;
 wire[4:0] readR_2;
 wire[4:0] writeR;
 wire[31:0] writeD;
+reg[31:0] counter;
 
 assign readR_1 = rs;
 assign readR_2 = rt;
 assign writeR = (Jal == 0) ? ((RegDst == 0) ? rt : rd) : 5'b1_1111;
 assign writeD = (Jal == 0) ? ((MemtoReg == 0) ? ALU_result : read_data) : opcplus4;
 
+always @(negedge clock or posedge reset)
+begin
+    if(Instruction == 32'hffff_ffff) begin
+        if(Registers[2] == 32'd5) begin
+            Registers[2] <= io_write_data;
+        end
+        else if(Registers[2] == 32'd88) begin
+            output_mode <= 2'b01;
+            io_read_data <= Registers[4];
+        end
+        else if(Registers[2] == 32'd5) begin
+            output_mode <= 2'b10;
+            io_read_data <= Registers[4];
+        end
+    end
+end
+
 always @(posedge clock or posedge reset)
 begin
-    if(reset)
-    begin
+    if(reset) begin
         Registers[0] <= 32'h00000000;
         Registers[1] <= 32'h00000000;
         Registers[2] <= 32'h00000000;
@@ -113,39 +130,49 @@ begin
         read_data_2 <= 32'h00000000;
         io_read_data <= 32'h00000000;
         imme_extend <= 32'h00000000;
-        output_mode <= 2'b00;
     end
-    else
-    begin
+    else begin
         if(Instruction == 32'hffff_ffff) begin
             if(Registers[2] == 32'd5) begin
-                IORead = 1'b1;
-                IOWrite = 1'b0;
-                Registers[2] <= io_write_data;
+                IORead <= 1'b1;
+                IOWrite <= 1'b0;
             end
             else if(Registers[2] == 32'd88) begin
-                IORead = 1'b0;
-                IOWrite = 1'b1;
-                io_read_data <= Registers[4];
-                output_mode <= 2'b01;
+                IORead <= 1'b0;
+                IOWrite <= 1'b1;
             end
             else if(Registers[2] == 32'd5) begin
-                IORead = 1'b0;
-                IOWrite = 1'b1;
-                io_read_data <= Registers[4];
-                output_mode <= 2'b10;
+                IORead <= 1'b0;
+                IOWrite <= 1'b1;
             end
             else if(Registers[2] == 32'd111) begin
                 //the world 1s
+                IORead <= 1'b0;
+                IOWrite <= 1'b0;
+                if(counter == 32'h015e_f3c0) begin
+                    TheWorld <= 1'b0;
+                    counter <= 32'h0000_0000;
+                end
+                else begin
+                    TheWorld <= 1'b1;
+                    counter <= counter + 1'b1;
+                end
             end
             else begin
-                                IORead = 1'b0;
+                IORead = 1'b0;
                 IOWrite = 1'b0;
+                TheWorld = 1'b0;
                 io_read_data <= 32'h0000000;
                 output_mode <= 2'b00;
             end
         end
         else begin
+            IORead = 1'b0;
+            IOWrite = 1'b0;
+            TheWorld = 1'b0;
+            io_read_data <= 32'h0000000;
+            output_mode <= 2'b00;
+            
             imme_extend <= {{16{immediate[15]}}, immediate[15:0]};
             read_data_1 <= Registers[rs];
             read_data_2 <= Registers[rt];

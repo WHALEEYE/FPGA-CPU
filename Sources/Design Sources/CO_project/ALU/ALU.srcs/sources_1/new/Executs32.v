@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Executs32(Read_data_1, Read_data_2, Imme_extend, Function_opcode, opcode, ALUOp,
+module Executs32(read_data_1, read_data_2, Imme_extend, Function_opcode, opcode, ALUOp,
                     Shamt, ALUSrc, I_format, Zero, Sftmd, ALU_Result, Addr_Result, PC_plus_4, Jr);
     // from decoder
-    input[31:0] Read_data_1; //the source of Ainput
-    input[31:0] Read_data_2; //one of the sources of Binput
+    input[31:0] read_data_1; //the source of Ainput
+    input[31:0] read_data_2; //one of the sources of Binput
     input[31:0] Imme_extend; //one of the sources of Binput
     // from ifetch
     input[5:0] Function_opcode; //instructions[5:0]
@@ -50,8 +50,8 @@ module Executs32(Read_data_1, Read_data_2, Imme_extend, Function_opcode, opcode,
     reg[31:0] Shift_Result; // the result of shift operation
     wire[32:0] Branch_Addr; // the calculated address of the instruction, Addr_Result is Branch_Addr[31:0]
 
-    assign Ainput = Read_data_1;
-    assign Binput = (ALUSrc == 0) ? Read_data_2 : Imme_extend;
+    assign Ainput = read_data_1;
+    assign Binput = (ALUSrc == 0) ? read_data_2 : Imme_extend;
     assign Exe_code = (I_format == 0) ? Function_opcode : {3'b000, opcode[2:0]};
     assign ALU_ctl[0] = (Exe_code[0] | Exe_code[3]) & ALUOp[1];
     assign ALU_ctl[1] = ((!Exe_code[2]) | (!ALUOp[1]));
