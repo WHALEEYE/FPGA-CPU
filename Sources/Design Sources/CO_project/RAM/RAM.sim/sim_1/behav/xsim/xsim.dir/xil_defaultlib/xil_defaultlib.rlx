@@ -1,8 +1,0 @@
-0.6
-2017.4
-Dec 15 2017
-21:07:18
-D:/SUSTECH_programe_projects/CO_project/RAM/RAM.sim/sim_1/behav/xsim/glbl.v,1513211660,verilog,,,,glbl,,,,,,,,
-D:/SUSTECH_programe_projects/CO_project/RAM/RAM.srcs/sim_1/new/RAM_sim.v,1620653207,verilog,,,,RAM_sim,,,,,,,,
-D:/SUSTECH_programe_projects/CO_project/RAM/RAM.srcs/sources_1/ip/RAM/sim/RAM.v,1618280864,verilog,,D:/SUSTECH_programe_projects/CO_project/RAM/RAM.srcs/sources_1/new/RAM_control.v,,RAM,,,,,,,,
-D:/SUSTECH_programe_projects/CO_project/RAM/RAM.srcs/sources_1/new/RAM_control.v,1620653236,verilog,,D:/SUSTECH_programe_projects/CO_project/RAM/RAM.srcs/sim_1/new/RAM_sim.v,,dmemory32,,,,,,,,

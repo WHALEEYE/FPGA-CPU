@@ -1,6 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTECH_programe_projects/CO_project/IFetch32/IFetch32.srcs/sources_1/ip/prgrom/sim/prgrom.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module prgrom
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTECH_programe_projects/CO_project/IFetch32/IFetch32.srcs/sources_1/new/IFetc32.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Ifetc32
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/SUSTECH_programe_projects/CO_project/IFetch32/IFetch32.srcs/sim_1/new/IFetc32_sim.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ifetc32_sim
