@@ -75,7 +75,7 @@ assign readR_2 = rt;
 assign writeR = (Jal == 0) ? ((RegDst == 0) ? rt : rd) : 5'b1_1111;
 assign writeD = (Jal == 0) ? ((MemtoReg == 0) ? ALU_result : read_data) : opcplus4;
 
-always @(negedge clock or posedge reset)
+always @(negedge clock)
 begin
     if(Instruction == 32'hffff_ffff)
     begin
