@@ -20,17 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Executs32(read_data_1, read_data_2, Imme_extend, Function_opcode, opcode, ALUOp,
-                 Shamt, ALUSrc, I_format, Zero, Sftmd, ALU_Result, Addr_Result, PC_plus_4, Jr);
+module Executs32(read_data_1, read_data_2, imme_extend, Function_opcode, opcode, ALUOp,
+                 Shamt, PC_plus_4, ALUSrc, I_format, Zero, Sftmd, ALU_Result, Addr_Result, Jr);
 // from decoder
 input       [31:0]  read_data_1;        //the source of Ainput
 input       [31:0]  read_data_2;        //one of the sources of Binput
-input       [31:0]  Imme_extend;        //one of the sources of Binput
+input       [31:0]  imme_extend;        //one of the sources of Binput
 // from ifetch
 input       [5:0]   Function_opcode;    //instructions[5:0]
 input       [5:0]   opcode;             //instruction[31:26]
 input       [4:0]   Shamt;              // instruction[10:6], the amount of shift bits
-input       [31:0]  PC_plus_4;          // pc+4
+input       [31:0]  PC_plus_4;          // pc + 4
 // from controller
 input       [1:0]   ALUOp;              //{ (R_format || I_format) , (Branch || nBranch) }
 input               ALUSrc;             // 1 means the 2nd operand is an immedite (except beq，bne�???
@@ -51,7 +51,7 @@ reg         [31:0]  Shift_Result;       // the result of shift operation
 wire        [32:0]  Branch_Addr;        // the calculated address of the instruction, Addr_Result is Branch_Addr[31:0]
 
 assign Ainput = read_data_1;
-assign Binput = (ALUSrc == 0) ? read_data_2 : Imme_extend;
+assign Binput = (ALUSrc == 0) ? read_data_2 : imme_extend;
 assign Exe_code = (I_format == 0) ? Function_opcode : {3'b000, opcode[2:0]};
 assign ALU_ctl[0] = (Exe_code[0] | Exe_code[3]) & ALUOp[1];
 assign ALU_ctl[1] = ((!Exe_code[2]) | (!ALUOp[1]));
@@ -83,7 +83,7 @@ always @* begin
 end
 
 //calculate Branch address
-assign Branch_Addr = (PC_plus_4 + Imme_extend * 4) / 4;
+assign Branch_Addr = (PC_plus_4 + imme_extend * 4) / 4;
 assign Addr_Result = Branch_Addr[31:0];
 assign Zero = (ALU_output_mux == 0) ? 1 : 0;
 

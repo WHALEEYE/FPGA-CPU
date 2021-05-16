@@ -20,17 +20,22 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module dmemory32(read_data, address, write_data, Memwrite, clock);
+module dmemory32(address, write_data, Memwrite, MEM_ena, clock, read_data);
 input               clock;
 input   [31:0]      address;
 input   [31:0]      write_data;
 input               Memwrite;
+input               MEM_ena;
 output  [31:0]      read_data;
+
 wire                clk;
-assign clk = !clock;
+wire                ena;
+assign clk = ~clock;
+assign ena = MEM_ena & Memwrite;
+
 RAM ram(
         .clka(clk),
-        .wea(Memwrite),
+        .wea(ena),
         .addra(address[15:2]),
         .dina(write_data),
         .douta(read_data)

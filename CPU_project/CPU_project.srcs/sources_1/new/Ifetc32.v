@@ -20,13 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Ifetc32(Instruction, branch_base_addr, Addr_result, Read_data_1, Branch, nBranch, Jmp, Jal, Jr, Zero, clock, reset, link_addr, Pause);
+module Ifetc32(Addr_result, read_data_1, Branch, nBranch, Jmp, Jal, Jr, Zero, clock, reset, Pause, IF_ena, Instruction, branch_base_addr, link_addr);
 // input
 //from ALU
 input       [31:0]        Addr_result;            // the calculated address from ALU
 input                     Zero;                   // while Zero is 1, it means the ALUresult is zero
 
-input       [31:0]        Read_data_1;            // the address of instruction used by jr instruction
+input       [31:0]        read_data_1;            // the address of instruction used by jr instruction
 input                     Branch;
 input                     nBranch;
 input                     Jmp;
@@ -35,6 +35,7 @@ input                     Jr;
 input                     clock;
 input                     reset;                  //1'b1 is 'reset' enable, 1'b0 means 'reset' disable. while 'reset' enable, the value of PC is set as 32'h0000_0000
 input                     Pause;
+input                     IF_ena;
 
 // output
 output      [31:0]        Instruction;
@@ -46,49 +47,49 @@ reg         [31:0]        PC;
 reg         [31:0]        Next_PC;
 wire                      branch_ctr;
 
+wire                      clkn;
+assign clkn = ~clock;
+
 always @*
 begin
-    if(((Branch == 1) && (Zero == 1 )) || ((nBranch == 1) && (Zero == 0)))
+    if (Pause)
+    begin
+    end
+    else if((Branch && Zero) || (nBranch && !Zero))
         Next_PC = Addr_result * 4;
-    else if(Jr == 1)
-        Next_PC = Read_data_1 * 4;
-    else if(Pause == 1)
-        Next_PC = Next_PC;
+    else if(Jr)
+        Next_PC = read_data_1 * 4;
     else
         Next_PC = PC + 32'h0000_0004;
 end
 
 assign branch_base_addr = PC + 32'h0000_0004;
 
-always @(negedge clock, posedge reset)
+always @(posedge clock or posedge reset)
 begin
-    if(reset)
+    if (reset)
     begin
         PC <= 32'h0000_0000;
     end
-    else
+    else if (IF_ena)
     begin
-        if((Jal | Jmp) == 1)
+        if (Pause)
+        begin
+        end
+        else if (Jal || Jmp)
         begin
             link_addr = (PC + 4'b0100) / 4;
             PC <= {4'b0000, Instruction[25:0], 2'b00};
         end
-        else if(Pause == 1)
-        begin
-            PC <= PC;
-        end
         else
-        begin
             PC <= Next_PC;
-        end
-        //PC <= ((Jal | Jmp) == 0) ? ((Jr == 0) ? ((branch_ctr == 0 ? (branch_base_addr) : (Addr_result * 4))) : (Read_data_1 * 4)) : ({PC[31:28], Instruction[25:0], 2'b00});
-        //link_addr = ((Jal | Jmp) == 0) ? link_addr : (PC + 4'b0100) / 4;
     end
 end
 
-prgrom instmem(.clka(clock),
-               .addra(PC >> 2),
-               .douta(Instruction)
-              );
+prgrom instmem(
+           .clka(clkn),
+           .addra(PC >> 2),
+           .douta(Instruction)
+       );
 
 endmodule

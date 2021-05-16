@@ -29,6 +29,7 @@ output            LEDCtrl, SwitchCtrl, TubeCtrl;
 
 //module clock
 wire              clock;
+reg     [1:0]     main_counter;
 
 //module IO
 //output
@@ -49,14 +50,14 @@ assign Function_opcode = Instruction[5:0];
 
 //module Decoder
 //output
-wire              read_data_1, read_data_2;
+wire              read_data_1, read_data_2, imme_extend;
+wire              syscall;
 wire              Pause;
-wire              IORead, IOWrite, output_mode;
 
 //module ALU
 //output
 wire              Zero;
-wire    [31:0]    Addr_result, ALU_result, imme_extend;
+wire    [31:0]    Addr_result, ALU_result;
 //input
 wire    [4:0]     Shamt;
 assign Shamt = Instruction[10:6];
@@ -65,20 +66,137 @@ assign Shamt = Instruction[10:6];
 //output
 wire    [31:0]    read_data;
 
+wire              IF_ena, ID_ena, MEM_ena, WB_ena;
+assign IF_ena = (main_counter == 2'b00) ? 1'b1 : 1'b0;
+assign ID_ena = (main_counter == 2'b01) ? 1'b1 : 1'b0;
+assign MEM_ena = (main_counter == 2'b10) ? 1'b1 : 1'b0;
+assign WB_ena = (main_counter == 2'b11) ? 1'b1 : 1'b0;
+
+
+
 Clock cpu_clk(clkin, clock);
-MemOrIO cpu_io(IORead, IOWrite, io_input, io_write_data, io_read_data, io_output, output_mode, LEDCtrl, SwitchCtrl, TubeCtrl);
 
-Ifetc32 cpu_ifetch(Instruction, branch_base_addr, Addr_result, read_data_1, Branch, nBranch, Jmp, Jal, Jr, Zero, clock, reset, link_addr, Pause);
+always @(negedge clock or posedge reset)
+begin
+    if(reset)
+    begin
+        main_counter <= 2'b00;
+    end
+    else
+    begin
+        case (main_counter)
+            2'b00:
+                main_counter <= 2'b01;
+            2'b01:
+            begin
+                if (syscall)
+                    main_counter <= 2'b00;
+                else if (MemWrite)
+                    main_counter <= 2'b10;
+                else if (RegWrite)
+                    main_counter <= 2'b11;
+                else
+                    main_counter <= 2'b00;
+            end
+            2'b10:
+            begin
+                if (RegWrite)
+                    main_counter <= 2'b11;
+                else
+                    main_counter <= 2'b00;
+            end
+            2'b11:
+                main_counter <= 2'b00;
+        endcase
+    end
+end
 
-control32 cpu_ctrl(Opcode, Function_opcode, Jr, RegDST, ALUSrc, MemtoReg, RegWrite,
-                   MemWrite, Branch, nBranch, Jmp, Jal, I_format, Sftmd, ALUOp);
 
-Idecode32 cpu_decoder(read_data_1, read_data_2, Instruction, read_data, ALU_result, Jal, RegWrite, MemtoReg, RegDST,
-                      imme_extend, clock, reset, link_addr, io_write_data, io_read_data, output_mode, IORead, IOWrite, Pause);
+Ifetc32 cpu_ifetch(
+            .Addr_result(Addr_result),
+            .read_data_1(read_data_1),
+            .Branch(Branch),
+            .nBranch(nBranch),
+            .Jmp(Jmp),
+            .Jal(Jal),
+            .Jr(Jr),
+            .Zero(Zero),
+            .clock(clock),
+            .reset(reset),
+            .Pause(Pause),
+            .IF_ena(IF_ena),
+            .Instruction(Instruction),
+            .branch_base_addr(branch_base_addr),
+            .link_addr(link_addr)
+        );
 
-Executs32 cpu_alu(read_data_1, read_data_2, imme_extend, Function_opcode, Opcode, ALUOp,
-                  Shamt, ALUSrc, I_format, Zero, Sftmd, ALU_result, Addr_result, branch_base_addr, Jr);
+control32 cpu_ctrl(
+              .Opcode(Opcode),
+              .Function_opcode(Function_opcode),
+              .Jr(Jr),
+              .RegDST(RegDST),
+              .ALUSrc(ALUSrc),
+              .MemtoReg(MemtoReg),
+              .RegWrite(RegWrite),
+              .MemWrite(MemWrite),
+              .Branch(Branch),
+              .nBranch(nBranch),
+              .Jmp(Jmp),
+              .Jal(Jal),
+              .I_format(I_format),
+              .Sftmd(Sftmd),
+              .ALUOp(ALUOp)
+          );
 
-dmemory32 cpu_ram(read_data, ALU_result, read_data_2, MemWrite, clock);
+Idecode32 cpu_decoder(
+              .read_data_1(read_data_1),
+              .read_data_2(read_data_2),
+              .Instruction(Instruction),
+              .read_data(read_data),
+              .ALU_result(ALU_result),
+              .Jal(Jal),
+              .RegWrite(RegWrite),
+              .MemtoReg(MemtoReg),
+              .RegDST(RegDST),
+              .imme_extend(imme_extend),
+              .clock(clock),
+              .reset(reset),
+              .opcplus4(link_addr),
+              .ID_ena(ID_ena),
+              .WB_ena(WB_ena),
+              .io_write_data(io_write_data),
+              .io_read_data(io_read_data),
+              .Pause(Pause),
+              .TubeCtrl(TubeCtrl),
+              .LEDCtrl(LEDCtrl),
+              .syscall(syscall)
+          );
+
+Executs32 cpu_alu(
+              .read_data_1(read_data_1),
+              .read_data_2(read_data_2),
+              .imme_extend(imme_extend),
+              .Function_opcode(Function_opcode),
+              .opcode(Opcode),
+              .ALUOp(ALUOp),
+              .Shamt(Shamt),
+              .PC_plus_4(branch_base_addr),
+              .ALUSrc(ALUSrc),
+              .I_format(I_format),
+              .Zero(Zero),
+              .Sftmd(Sftmd),
+              .ALU_Result(ALU_result),
+              .Addr_Result(Addr_result),
+              .Jr(Jr)
+          );
+
+dmemory32 cpu_ram(
+              .address(ALU_result),
+              .write_data(read_data_2),
+              .Memwrite(MemWrite),
+              .MEM_ena(MEM_ena),
+              .clock(clock),
+              .read_data(read_data)
+          );
 
 endmodule
