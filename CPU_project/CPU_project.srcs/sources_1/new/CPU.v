@@ -20,20 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CPU(io_input, io_output, LEDCtrl, SwitchCtrl, TubeCtrl, clkin, reset);
+module CPU(io_input, io_output, LEDCtrl, TubeCtrl, clkin, reset);
 input             clkin;
 input   [31:0]    io_input;
 input             reset;
 output  [31:0]    io_output;
-output            LEDCtrl, SwitchCtrl, TubeCtrl;
+output            LEDCtrl, TubeCtrl;
 
 //module clock
 wire              clock;
 reg     [1:0]     main_counter;
-
-//module IO
-//output
-wire    [31:0]    io_write_data, io_read_data;
 
 //module ifetch
 //output
@@ -50,7 +46,7 @@ assign Function_opcode = Instruction[5:0];
 
 //module Decoder
 //output
-wire              read_data_1, read_data_2, imme_extend;
+wire    [31:0]    read_data_1, read_data_2, imme_extend;
 wire              syscall;
 wire              Pause;
 
@@ -164,8 +160,8 @@ Idecode32 cpu_decoder(
               .opcplus4(link_addr),
               .ID_ena(ID_ena),
               .WB_ena(WB_ena),
-              .io_write_data(io_write_data),
-              .io_read_data(io_read_data),
+              .io_input(io_input),
+              .io_output(io_output),
               .Pause(Pause),
               .TubeCtrl(TubeCtrl),
               .LEDCtrl(LEDCtrl),

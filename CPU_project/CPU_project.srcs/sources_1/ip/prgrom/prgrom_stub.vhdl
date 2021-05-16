@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Fri May 14 21:21:41 2021
--- Host        : DESKTOP-V7DC3DF running 64-bit major release  (build 9200)
+-- Date        : Sun May 16 22:01:02 2021
+-- Host        : Orcinus-orca running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               d:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sources_1/ip/prgrom/prgrom_stub.vhdl
+--               D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/prgrom/prgrom_stub.vhdl
 -- Design      : prgrom
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tfgg484-1

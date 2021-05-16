@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=D:/vivado/SDK/2017.4/bin;D:/vivado/Vivado/2017.4/ids_lite/ISE/bin/nt64;D:/vivado/Vivado/2017.4/ids_lite/ISE/lib/nt64:D:/vivado/Vivado/2017.4/bin
+  PATH=D:/Software/Vivado2017/SDK/2017.4/bin;D:/Software/Vivado2017/Vivado/2017.4/ids_lite/ISE/bin/nt64;D:/Software/Vivado2017/Vivado/2017.4/ids_lite/ISE/lib/nt64:D:/Software/Vivado2017/Vivado/2017.4/bin
 else
-  PATH=D:/vivado/SDK/2017.4/bin;D:/vivado/Vivado/2017.4/ids_lite/ISE/bin/nt64;D:/vivado/Vivado/2017.4/ids_lite/ISE/lib/nt64:D:/vivado/Vivado/2017.4/bin:$PATH
+  PATH=D:/Software/Vivado2017/SDK/2017.4/bin;D:/Software/Vivado2017/Vivado/2017.4/ids_lite/ISE/bin/nt64;D:/Software/Vivado2017/Vivado/2017.4/ids_lite/ISE/lib/nt64:D:/Software/Vivado2017/Vivado/2017.4/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='D:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.runs/prgrom_synth_1'
+HD_PWD='D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/prgrom_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

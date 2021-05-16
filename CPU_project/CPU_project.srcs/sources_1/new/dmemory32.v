@@ -30,11 +30,10 @@ output  [31:0]      read_data;
 
 wire                clk;
 wire                ena;
-assign clk = ~clock;
 assign ena = MEM_ena & Memwrite;
 
 RAM ram(
-        .clka(clk),
+        .clka(clock),
         .wea(ena),
         .addra(address[15:2]),
         .dina(write_data),

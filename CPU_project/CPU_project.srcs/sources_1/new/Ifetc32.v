@@ -40,7 +40,7 @@ input                     IF_ena;
 // output
 output      [31:0]        Instruction;
 output      [31:0]        branch_base_addr;       // (pc+4) to ALU which is used by branch type instruction
-output reg  [31:0]        link_addr;              // (pc+4) to decoder which is used by jal
+output      [31:0]        link_addr;              // (pc+4) to decoder which is used by jal
 
 //Calculate PC
 reg         [31:0]        PC;
@@ -64,6 +64,7 @@ begin
 end
 
 assign branch_base_addr = PC + 32'h0000_0004;
+assign link_addr = (PC + 32'h0000_0004) / 4;
 
 always @(posedge clock or posedge reset)
 begin
@@ -77,10 +78,7 @@ begin
         begin
         end
         else if (Jal || Jmp)
-        begin
-            link_addr = (PC + 4'b0100) / 4;
             PC <= {4'b0000, Instruction[25:0], 2'b00};
-        end
         else
             PC <= Next_PC;
     end

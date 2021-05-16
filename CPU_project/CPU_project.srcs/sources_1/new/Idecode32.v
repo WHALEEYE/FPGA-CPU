@@ -20,17 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Idecode32(read_data_1, read_data_2, Instruction, read_data, ALU_result, Jal, RegWrite, MemtoReg, RegDst,
-                 imme_extend, clock, reset, opcplus4, ID_ena, WB_ena, io_write_data, io_read_data, Pause, TubeCtrl, LEDCtrl, syscall);
+module Idecode32(read_data_1, read_data_2, Instruction, read_data, ALU_result, Jal, RegWrite, MemtoReg, RegDST,
+                 imme_extend, clock, reset, opcplus4, ID_ena, WB_ena, io_input, io_output, Pause, TubeCtrl, LEDCtrl, syscall);
 // input
 input       [31:0]  Instruction;
 input       [31:0]  read_data;
 input       [31:0]  ALU_result;
-input       [31:0]  io_write_data;
+input       [31:0]  io_input;
 input               Jal;                // 0 : data from alu, write to rt/rd 1 : data from pc+4, write to $ra
 input               RegWrite;           // write in register
 input               MemtoReg;           // 1 : read data 0 : alu result
-input               RegDst;             // 0 : rt 1 : rd
+input               RegDST;             // 0 : rt 1 : rd
 input               clock,reset;        //
 input       [31:0]  opcplus4;           // from ifetch link_address
 input               ID_ena;
@@ -39,7 +39,7 @@ input               WB_ena;
 output reg  [31:0]  read_data_1;
 output reg  [31:0]  read_data_2;
 output reg  [31:0]  imme_extend;
-output reg  [31:0]  io_read_data;
+output reg  [31:0]  io_output;
 output reg          Pause;              // 1s stop
 output reg          TubeCtrl;
 output reg          LEDCtrl;
@@ -72,7 +72,7 @@ reg         [31:0]  counter;
 
 assign readR_1 = rs;
 assign readR_2 = rt;
-assign writeR = (Jal == 0) ? ((RegDst == 0) ? rt : rd) : 5'b1_1111;
+assign writeR = (Jal == 0) ? ((RegDST == 0) ? rt : rd) : 5'b1_1111;
 assign writeD = (Jal == 0) ? ((MemtoReg == 0) ? ALU_result : read_data) : opcplus4;
 
 always @(posedge clock or posedge reset)
@@ -113,8 +113,9 @@ begin
         Registers[31] <= 32'h00000000;
         read_data_1 <= 32'h00000000;
         read_data_2 <= 32'h00000000;
-        io_read_data <= 32'h00000000;
+        io_output <= 32'h00000000;
         imme_extend <= 32'h00000000;
+        counter <= 32'h00000000;
         {syscall, Pause, TubeCtrl, LEDCtrl} <= 4'b0000;
     end
     else if(ID_ena)
@@ -123,22 +124,22 @@ begin
         begin
             syscall <= 1'b1;
             if(Registers[2] == 32'd5)
-                Registers[2] <= io_write_data;
+                Registers[2] <= io_input;
             else if (Registers[2] == 32'd88)
             begin
                 LEDCtrl <= 1'b1;
                 TubeCtrl <= 1'b0;
-                io_read_data <= Registers[4];
+                io_output <= Registers[4];
             end
             else if (Registers[2] == 32'd1)
             begin
                 TubeCtrl <= 1'b1;
                 LEDCtrl <= 1'b0;
-                io_read_data <= Registers[4];
+                io_output <= Registers[4];
             end
             else if (Registers[2] == 32'd111)
             begin
-                if(counter == 32'h015e_f3c0) // need to be modified
+                if(counter == 32'h00000010) // need to be modified   015e_f3c0
                 begin
                     Pause <= 1'b0;
                     counter <= 32'h0000_0000;
