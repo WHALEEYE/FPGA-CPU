@@ -20,12 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CPU(io_input, io_output, LEDCtrl, TubeCtrl, clkin, reset);
+module CPU(io_input, io_output, clkin, reset);
 input             clkin;
 input   [31:0]    io_input;
 input             reset;
 output  [31:0]    io_output;
-output            LEDCtrl, TubeCtrl;
 
 //module clock
 wire              clock;
@@ -163,8 +162,6 @@ Idecode32 cpu_decoder(
               .io_input(io_input),
               .io_output(io_output),
               .Pause(Pause),
-              .TubeCtrl(TubeCtrl),
-              .LEDCtrl(LEDCtrl),
               .syscall(syscall)
           );
 

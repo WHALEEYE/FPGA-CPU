@@ -21,7 +21,7 @@
 
 
 module Idecode32(read_data_1, read_data_2, Instruction, read_data, ALU_result, Jal, RegWrite, MemtoReg, RegDST,
-                 imme_extend, clock, reset, opcplus4, ID_ena, WB_ena, io_input, io_output, Pause, TubeCtrl, LEDCtrl, syscall);
+                 imme_extend, clock, reset, opcplus4, ID_ena, WB_ena, io_input, io_output, Pause, syscall);
 // input
 input       [31:0]  Instruction;
 input       [31:0]  read_data;
@@ -41,8 +41,6 @@ output reg  [31:0]  read_data_2;
 output reg  [31:0]  imme_extend;
 output reg  [31:0]  io_output;
 output reg          Pause;              // 1s stop
-output reg          TubeCtrl;
-output reg          LEDCtrl;
 output reg          syscall;
 
 // decode the instruction
@@ -116,7 +114,7 @@ begin
         io_output <= 32'h00000000;
         imme_extend <= 32'h00000000;
         counter <= 32'h00000000;
-        {syscall, Pause, TubeCtrl, LEDCtrl} <= 4'b0000;
+        {syscall, Pause} <= 2'b00;
     end
     else if(ID_ena)
     begin
@@ -125,18 +123,8 @@ begin
             syscall <= 1'b1;
             if(Registers[2] == 32'd5)
                 Registers[2] <= io_input;
-            else if (Registers[2] == 32'd88)
-            begin
-                LEDCtrl <= 1'b1;
-                TubeCtrl <= 1'b0;
-                io_output <= Registers[4];
-            end
             else if (Registers[2] == 32'd1)
-            begin
-                TubeCtrl <= 1'b1;
-                LEDCtrl <= 1'b0;
                 io_output <= Registers[4];
-            end
             else if (Registers[2] == 32'd111)
             begin
                 if(counter == 32'h00000010) // need to be modified   015e_f3c0
