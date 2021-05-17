@@ -23,8 +23,23 @@
 module CPU_Tb();
 reg     [31:0]    io_input;
 reg               reset;
+reg               renew;
+reg               din;
 wire    [31:0]    io_output;
-wire              LEDCtrl, TubeCtrl;
+wire    [31:0]    PC;
+wire    [31:0]    Next_PC;
+
+// uart
+wire    [7:0]     dout;
+wire              dout_vld;
+wire ena;
+wire [31:0] instmem_addr;
+wire [31:0] imem_write_data;
+wire init;
+wire [31:0] buffer;
+wire [1:0] counter;
+wire write_ena;
+wire [31:0] addr_pointer;
 
 //module clock
 reg               clock;
@@ -69,11 +84,16 @@ assign ID_ena = (main_counter == 2'b01) ? 1'b1 : 1'b0;
 assign MEM_ena = (main_counter == 2'b10) ? 1'b1 : 1'b0;
 assign WB_ena = (main_counter == 2'b11) ? 1'b1 : 1'b0;
 
-always @(negedge clock or posedge reset)
+wire rst;
+wire uart_reset;
+assign rst = reset | renew;
+assign uart_reset = reset | ~renew;
+
+always @(negedge clock or posedge rst)
 begin
-    if(reset)
+    if(rst)
     begin
-        main_counter <= 2'b00;
+        main_counter <= 2'b01;
     end
     else
     begin
@@ -106,6 +126,8 @@ end
 
 
 Ifetc32 cpu_ifetch(
+            .PC(PC),
+            .Next_PC(Next_PC),
             .Addr_result(Addr_result),
             .read_data_1(read_data_1),
             .Branch(Branch),
@@ -118,9 +140,20 @@ Ifetc32 cpu_ifetch(
             .reset(reset),
             .Pause(Pause),
             .IF_ena(IF_ena),
+            .renew(renew),
+            .dout(dout),
+            .dout_vld(dout_vld),
             .Instruction(Instruction),
             .branch_base_addr(branch_base_addr),
-            .link_addr(link_addr)
+            .link_addr(link_addr),
+            .ena(ena),
+            .instmem_addr(instmem_addr),
+            .imem_write_data(imem_write_data),
+            .init(init),
+            .buffer(buffer),
+            .counter(counter),
+            .write_ena(write_ena),
+            .addr_pointer(addr_pointer)
         );
 
 control32 cpu_ctrl(
@@ -153,15 +186,13 @@ Idecode32_Test cpu_decoder(
                    .RegDST(RegDST),
                    .imme_extend(imme_extend),
                    .clock(clock),
-                   .reset(reset),
+                   .reset(rst),
                    .opcplus4(link_addr),
                    .ID_ena(ID_ena),
                    .WB_ena(WB_ena),
                    .io_input(io_input),
                    .io_output(io_output),
                    .Pause(Pause),
-                   .TubeCtrl(TubeCtrl),
-                   .LEDCtrl(LEDCtrl),
                    .syscall(syscall),
                    .test_reg(test_reg)
                );
@@ -193,13 +224,151 @@ dmemory32 cpu_ram(
               .read_data(read_data)
           );
 
+uart_read uread(
+              .reset(uart_reset),
+              .clock(clock),
+              .din(din),
+              .dout(dout),
+              .dout_vld(dout_vld)
+          );
+
 
 initial
 begin
     io_input = 32'b10100000000000001111111111111101;
     clock = 1'b1;
     reset = 1'b1;
-    #5 reset = 1'b0;
+    din = 1'b0;
+    renew = 1'b0;
+    #3
+     reset = 1'b0;
+    #5
+     renew = 1'b1;
+    #22 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+    #24 din = 1'b1;
+    #24 din = 1'b0;
+    #24 din = 1'b1;
+
+    #100 renew = 1'b0;
     #400 $finish(0);
 end
 

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Mon May 17 11:40:01 2021
+| Date             : Mon May 17 23:43:10 2021
 | Host             : Orcinus-orca running 64-bit major release  (build 9200)
 | Command          : report_power -file cpu_wrap_power_routed.rpt -pb cpu_wrap_power_summary_routed.pb -rpx cpu_wrap_power_routed.rpx
 | Design           : cpu_wrap
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.200        |
+| Total On-Chip Power (W)  | 0.199        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.114        |
+| Dynamic (W)              | 0.113        |
 | Device Static (W)        | 0.085        |
 | Effective TJA (C/W)      | 2.7          |
 | Max Ambient (C)          | 84.5         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        5 |       --- |             --- |
-| Slice Logic    |     0.002 |     3704 |       --- |             --- |
-|   LUT as Logic |     0.002 |     1919 |     63400 |            3.03 |
+| Slice Logic    |     0.001 |     3728 |       --- |             --- |
+|   LUT as Logic |     0.001 |     1938 |     63400 |            3.06 |
 |   CARRY4       |    <0.001 |       48 |     15850 |            0.30 |
-|   F7/F8 Muxes  |    <0.001 |      287 |     63400 |            0.45 |
 |   Register     |    <0.001 |     1222 |    126800 |            0.96 |
+|   F7/F8 Muxes  |    <0.001 |      287 |     63400 |            0.45 |
 |   Others       |     0.000 |       89 |       --- |             --- |
-| Signals        |     0.004 |     3131 |       --- |             --- |
+| Signals        |     0.003 |     3154 |       --- |             --- |
 | Block RAM      |     0.005 |       29 |       135 |           21.48 |
 | PLL            |     0.103 |        1 |         6 |           16.67 |
-| I/O            |    <0.001 |       18 |       285 |            6.32 |
+| I/O            |    <0.001 |       19 |       285 |            6.67 |
 | Static Power   |     0.085 |          |           |                 |
-| Total          |     0.200 |          |           |                 |
+| Total          |     0.199 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.036 |       0.020 |      0.016 |
+| Vccint    |       1.000 |     0.035 |       0.019 |      0.016 |
 | Vccaux    |       1.800 |     0.070 |       0.052 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -145,20 +145,20 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| cpu_wrap                                         |     0.114 |
-|   test_cpu                                       |     0.114 |
+| cpu_wrap                                         |     0.113 |
+|   test_cpu                                       |     0.113 |
 |     cpu_alu                                      |    <0.001 |
 |     cpu_clk                                      |     0.103 |
 |       clk                                        |     0.103 |
 |         inst                                     |     0.103 |
-|     cpu_decoder                                  |     0.004 |
+|     cpu_decoder                                  |     0.003 |
 |     cpu_ifetch                                   |     0.004 |
 |       instmem                                    |     0.002 |
 |         U0                                       |     0.002 |
 |           inst_blk_mem_gen                       |     0.002 |
 |             gnbram.gnativebmg.native_blk_mem_gen |     0.002 |
 |               valid.cstr                         |     0.002 |
-|                 bindec_a.bindec_inst_a           |     0.000 |
+|                 bindec_a.bindec_inst_a           |    <0.001 |
 |                 has_mux_a.A                      |    <0.001 |
 |                 ramloop[0].ram.r                 |    <0.001 |
 |                   prim_init.ram                  |    <0.001 |

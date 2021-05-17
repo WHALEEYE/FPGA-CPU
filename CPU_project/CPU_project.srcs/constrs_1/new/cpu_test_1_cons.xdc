@@ -34,3 +34,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports clkin]
 set_property IOSTANDARD LVCMOS33 [get_ports reset]
 set_property PACKAGE_PIN Y18 [get_ports clkin]
 set_property PACKAGE_PIN W4 [get_ports reset]
+
+set_property IOSTANDARD LVCMOS33 [get_ports din]
+set_property IOSTANDARD LVCMOS33 [get_ports renew]
+set_property PACKAGE_PIN Y19 [get_ports din]
+set_property PACKAGE_PIN R4 [get_ports renew]

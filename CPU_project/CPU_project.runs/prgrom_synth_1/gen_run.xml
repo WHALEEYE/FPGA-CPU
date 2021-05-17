@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="prgrom_synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621221485">
+<GenRun Id="prgrom_synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621257313">
   <File Type="PA-TCL" Name="prgrom.tcl"/>
   <File Type="REPORTS-TCL" Name="prgrom_reports.tcl"/>
   <File Type="RDS-RDS" Name="prgrom.vds"/>
@@ -9,6 +9,7 @@
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/prgrom">
     <File Path="$PSRCDIR/sources_1/ip/prgrom/prgrom.xci">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -22,6 +23,7 @@
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/prgrom">
     <File Path="$PSRCDIR/sources_1/ip/prgrom/prgrom.xci">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

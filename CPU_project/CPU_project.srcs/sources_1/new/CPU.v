@@ -20,11 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CPU(io_input, clkin, reset, io_output);
+module CPU(io_input, clkin, reset, renew, din, io_output);
 input             clkin;
 input   [31:0]    io_input;
 input             reset;
+input             renew; // Whether the uart is renewing program codes into instram
 output  [31:0]    io_output;
+
+// uart
+input             din;
+wire    [7:0]     dout;
+wire              dout_vld;
 
 //module clock
 wire              clock;
@@ -67,15 +73,18 @@ assign ID_ena = (main_counter == 2'b01) ? 1'b1 : 1'b0;
 assign MEM_ena = (main_counter == 2'b10) ? 1'b1 : 1'b0;
 assign WB_ena = (main_counter == 2'b11) ? 1'b1 : 1'b0;
 
-
+wire rst;
+wire uart_reset;
+assign rst = reset | renew;
+assign uart_reset = reset | ~renew;
 
 Clock cpu_clk(clkin, clock);
 
-always @(negedge clock or posedge reset)
+always @(negedge clock or posedge rst)
 begin
-    if(reset)
+    if(rst)
     begin
-        main_counter <= 2'b00;
+        main_counter <= 2'b01;
     end
     else
     begin
@@ -120,6 +129,9 @@ Ifetc32 cpu_ifetch(
             .reset(reset),
             .Pause(Pause),
             .IF_ena(IF_ena),
+            .renew(renew),
+            .dout(dout),
+            .dout_vld(dout_vld),
             .Instruction(Instruction),
             .branch_base_addr(branch_base_addr),
             .link_addr(link_addr)
@@ -155,7 +167,7 @@ Idecode32 cpu_decoder(
               .RegDST(RegDST),
               .imme_extend(imme_extend),
               .clock(clock),
-              .reset(reset),
+              .reset(rst),
               .opcplus4(link_addr),
               .ID_ena(ID_ena),
               .WB_ena(WB_ena),
@@ -191,5 +203,14 @@ dmemory32 cpu_ram(
               .clock(clock),
               .read_data(read_data)
           );
+
+uart_read uread(
+              .reset(uart_reset),
+              .clock(clkin),
+              .din(din),
+              .dout(dout),
+              .dout_vld(dout_vld)
+          );
+
 
 endmodule

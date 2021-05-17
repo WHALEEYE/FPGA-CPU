@@ -1,7 +1,9 @@
 Vivado Simulator 2017.4
 Time resolution is 1 ps
-$finish called at time : 672 ns
-ading initial data...
+ Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
-Block Memory Generator module imem_uart_sim.it.insram.inst.native_mem_module.blk_mem_gen_v8_4_1_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-$finish called at time : 2022 ns
+Block Memory Generator module CPU_Tb.cpu_ifetch.instmem.inst.native_mem_module.blk_mem_gen_v8_4_1_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module CPU_Tb.cpu_ram.ram.inst.native_mem_module.blk_mem_gen_v8_4_1_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+$finish called at time : 3098 ns

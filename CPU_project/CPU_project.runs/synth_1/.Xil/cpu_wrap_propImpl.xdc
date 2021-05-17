@@ -35,3 +35,7 @@ set_property src_info {type:XDC file:1 line:35 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN Y18 [get_ports clkin]
 set_property src_info {type:XDC file:1 line:36 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W4 [get_ports reset]
+set_property src_info {type:XDC file:1 line:40 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y19 [get_ports din]
+set_property src_info {type:XDC file:1 line:41 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN R4 [get_ports renew]

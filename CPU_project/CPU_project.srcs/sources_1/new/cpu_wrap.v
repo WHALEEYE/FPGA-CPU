@@ -20,10 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module cpu_wrap(clkin, reset, test_output);
+module cpu_wrap(clkin, reset, renew, din, test_output);
 input               clkin;
 input               reset;
+input               din;
+input               renew;
 output  [15:0]      test_output;
+
 wire    [31:0]      io_input;
 wire    [31:0]      io_output;
 assign io_input = 32'd0;
@@ -33,6 +36,8 @@ CPU test_cpu(
         .io_input(io_input),
         .clkin(clkin),
         .reset(reset),
+        .renew(renew),
+        .din(din),
         .io_output(io_output)
     );
 endmodule

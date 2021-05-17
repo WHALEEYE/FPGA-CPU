@@ -39,6 +39,7 @@ reg [31:0] buffer;
 assign ena = write_ena;
 assign current_addr = addr_pointer;
 assign imem_write_data = buffer;
+wire clkn = ~clk;
 
 always @(posedge dout_vld or posedge rst)
 begin
@@ -83,8 +84,8 @@ begin
     end
 end
 
-RAM insram(
-        .clka(clk),
+IRAM insram(
+        .clka(clkn),
         .wea(ena),
         .addra(current_addr),
         .dina(imem_write_data),

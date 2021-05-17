@@ -21,23 +21,23 @@
 
 
 module uart_read(
-           input rst, clk, din,
+           input reset, clock, din,
            output reg [7: 0] dout,
            output reg dout_vld
        );
 
-parameter period = 6;                   //750000 baud rate
-reg[31: 0]cnt0;                         //The counter to count the original clk posedges
-reg[3: 0]cnt1;                          //The counter to count the bits received in one frame
-wire add_cnt0, end_cnt0, add_cnt1, end_cnt1;
+parameter period = 6;                           //9600 baud rate 10416
+reg     [31: 0]     cnt0;                           //The counter to count the original clock posedges
+reg     [3: 0]      cnt1;                           //The counter to count the bits received in one frame
+wire                add_cnt0, end_cnt0, add_cnt1, end_cnt1;
 
-reg rx0, rx1, rx2;
-wire rx_en;
-reg flag_add;
+reg                 rx0, rx1, rx2;
+wire                rx_en;
+reg                 flag_add;
 
-always @(posedge clk or posedge rst)
+always @(posedge clock or posedge reset)
 begin
-    if (rst)
+    if (reset)
     begin
         rx0 <= 1'b1;
         rx1 <= 1'b1;
@@ -53,9 +53,9 @@ end
 
 assign rx_en = rx2 & (~rx1);              //If a negedge detected, begin transporting
 
-always @(posedge clk or posedge rst)
+always @(posedge clock or posedge reset)
 begin
-    if (rst)
+    if (reset)
     begin
         cnt0 <= 0;
     end
@@ -71,9 +71,9 @@ end
 assign add_cnt0 = flag_add;
 assign end_cnt0 = (add_cnt0 && (cnt0 == (period - 1)));
 
-always @(posedge clk or posedge rst)
+always @(posedge clock or posedge reset)
 begin
-    if (rst)
+    if (reset)
     begin
         cnt1 <= 0;
     end
@@ -89,9 +89,9 @@ end
 assign add_cnt1 = end_cnt0;
 assign end_cnt1 = (add_cnt1 && (cnt1 == 8));    //If already received 8 bits and meets the time to add, means the process is done, don't need to receive the stop signal
 
-always @(posedge clk or posedge rst)
+always @(posedge clock or posedge reset)
 begin
-    if (rst)
+    if (reset)
     begin
         flag_add <= 1'b0;
     end
@@ -101,13 +101,13 @@ begin
     end
     else if (end_cnt1)
     begin
-        flag_add <= 1'b0;   //Once 8 bits already received, stop the original clk counter
+        flag_add <= 1'b0;   //Once 8 bits already received, stop the original clock counter
     end
 end
 
-always @(posedge clk or posedge rst)
+always @(posedge clock or posedge reset)
 begin
-    if (rst)
+    if (reset)
     begin
         dout <= 8'd0;
     end
@@ -119,9 +119,9 @@ end
 
 
 //Detect if the transport is done
-always @(posedge clk or posedge rst)
+always @(posedge clock or posedge reset)
 begin
-    if (rst)
+    if (reset)
     begin
         dout_vld <= 1'b0;
     end
