@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CPU(io_input, io_output, clkin, reset);
+module CPU(io_input, clkin, reset, io_output);
 input             clkin;
 input   [31:0]    io_input;
 input             reset;

@@ -1,0 +1,525 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon May 17 11:37:31 2021
+# Process ID: 20524
+# Current directory: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1
+# Command line: vivado.exe -log cpu_wrap.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_wrap.tcl
+# Log file: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/cpu_wrap.vds
+# Journal file: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source cpu_wrap.tcl -notrace
+Command: synth_design -top cpu_wrap -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9008 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 405.523 ; gain = 100.898
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'cpu_wrap' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/cpu_wrap.v:23]
+INFO: [Synth 8-638] synthesizing module 'CPU' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v:23]
+INFO: [Synth 8-638] synthesizing module 'Clock' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v:23]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'Clock' (2#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v:23]
+INFO: [Synth 8-638] synthesizing module 'Ifetc32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:23]
+INFO: [Synth 8-638] synthesizing module 'prgrom' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/realtime/prgrom_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'prgrom' (3#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/realtime/prgrom_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'prgrom' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:89]
+INFO: [Synth 8-256] done synthesizing module 'Ifetc32' (4#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:23]
+INFO: [Synth 8-638] synthesizing module 'control32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/control32.v:23]
+INFO: [Synth 8-256] done synthesizing module 'control32' (5#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/control32.v:23]
+INFO: [Synth 8-638] synthesizing module 'Idecode32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Idecode32.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Idecode32' (6#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Idecode32.v:23]
+INFO: [Synth 8-638] synthesizing module 'Executs32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Executs32' (7#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:23]
+INFO: [Synth 8-638] synthesizing module 'dmemory32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/dmemory32.v:23]
+INFO: [Synth 8-638] synthesizing module 'RAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'dmemory32' (9#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/dmemory32.v:23]
+INFO: [Synth 8-256] done synthesizing module 'CPU' (10#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v:23]
+INFO: [Synth 8-256] done synthesizing module 'cpu_wrap' (11#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/cpu_wrap.v:23]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[31]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[30]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[29]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[28]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[27]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[26]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[25]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[24]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[23]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[22]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[21]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[20]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[19]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[18]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[17]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[16]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[1]
+WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[0]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port Function_opcode[5]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port Function_opcode[4]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[5]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[4]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[3]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port Jr
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 458.605 ; gain = 153.980
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 458.605 ; gain = 153.980
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp4/prgrom_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp4/prgrom_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_wrap_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_wrap_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 820.305 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 820.305 ; gain = 515.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 820.305 ; gain = 515.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-20524-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for test_cpu/cpu_clk/clk. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for test_cpu/cpu_ifetch/instmem. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for test_cpu/cpu_ram/ram. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 820.305 ; gain = 515.680
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "R_format" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "I_format" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "MemtoReg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "MemWrite" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Branch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "nBranch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Jmp" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Jal" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[0]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[1]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "Registers" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "Registers_reg[2]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[3]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[4]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[5]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[6]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[7]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[8]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[9]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[10]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[11]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[12]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[13]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[14]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[15]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[16]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[17]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[18]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[19]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[20]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[21]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[22]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[23]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[24]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[25]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[26]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[27]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[28]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[29]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[30]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Registers_reg[31]" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "read_data_1" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Pause" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "syscall" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "IF_ena" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "MEM_ena" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "ID_ena" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "WB_ena" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'Next_PC_reg' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'ALU_output_mux_reg' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:88]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 820.305 ; gain = 515.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 38    
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 12    
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 60    
+	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Ifetc32 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 3     
+Module control32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 14    
+Module Idecode32 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 37    
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 42    
+	   4 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+Module Executs32 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+Module CPU 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Pause" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "test_cpu/cpu_ctrl/nBranch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "test_cpu/cpu_ctrl/Branch" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "test_cpu/cpu_ctrl/I_format" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "test_cpu/cpu_ctrl/R_format" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design Executs32 has unconnected port Function_opcode[5]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port Function_opcode[4]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[5]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[4]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[3]
+WARNING: [Synth 8-3331] design Executs32 has unconnected port Jr
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[17]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[25]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[29]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[21]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[31]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[31]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[15]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[23]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[27]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[19]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[16]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[24]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[28]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[20]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[30]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[30]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[26]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[22]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[26]'
+INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[26]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[18]'
+WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/Next_PC_reg[0]) is unused and will be removed from module cpu_wrap.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[31]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[30]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[29]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[28]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[27]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[26]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[25]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[24]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[23]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[22]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[21]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[20]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[19]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[18]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[17]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[16]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[31]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[30]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[29]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[28]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[27]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[26]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[25]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[24]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[23]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[22]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[21]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[20]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[19]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[18]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[17]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[16]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[15]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[14]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[13]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[12]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[11]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[10]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[9]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[8]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[7]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[6]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[5]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[4]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[3]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[2]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[1]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[0]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/PC_reg[0]) is unused and will be removed from module cpu_wrap.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 820.305 ; gain = 515.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'test_cpu/cpu_clk/clk/clk_out1' to pin 'test_cpu/cpu_clk/clk/bbstub_clk_out1/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 842.875 ; gain = 538.250
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 857.359 ; gain = 552.734
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |cpuclk        |         1|
+|2     |prgrom        |         1|
+|3     |RAM           |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |RAM    |     1|
+|2     |cpuclk |     1|
+|3     |prgrom |     1|
+|4     |CARRY4 |    48|
+|5     |LUT1   |     3|
+|6     |LUT2   |    57|
+|7     |LUT3   |   141|
+|8     |LUT4   |   177|
+|9     |LUT5   |   312|
+|10    |LUT6   |  1308|
+|11    |MUXF7  |   286|
+|12    |MUXF8  |     1|
+|13    |FDCE   |  1187|
+|14    |LD     |    31|
+|15    |IBUF   |     1|
+|16    |OBUF   |    16|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------+----------+------+
+|      |Instance        |Module    |Cells |
++------+----------------+----------+------+
+|1     |top             |          |  3633|
+|2     |  test_cpu      |CPU       |  3616|
+|3     |    cpu_alu     |Executs32 |    77|
+|4     |    cpu_clk     |Clock     |     2|
+|5     |    cpu_decoder |Idecode32 |  2903|
+|6     |    cpu_ifetch  |Ifetc32   |   599|
+|7     |    cpu_ram     |dmemory32 |    32|
++------+----------------+----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 913.176 ; gain = 608.551
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 58 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 913.176 ; gain = 246.852
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 913.176 ; gain = 608.551
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 367 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'cpu_wrap' is not ideal for floorplanning, since the cellview 'Idecode32' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 31 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 31 instances were transformed.
+  LD => LDCE (inverted pins: G): 31 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+111 Infos, 84 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 913.176 ; gain = 620.055
+INFO: [Common 17-1381] The checkpoint 'D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/cpu_wrap.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file cpu_wrap_utilization_synth.rpt -pb cpu_wrap_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 913.176 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon May 17 11:38:33 2021...

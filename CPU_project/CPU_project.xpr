@@ -31,20 +31,20 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="29"/>
+    <Option Name="WTXSimLaunchSim" Val="31"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="13"/>
-    <Option Name="WTModelSimExportSim" Val="13"/>
-    <Option Name="WTQuestaExportSim" Val="13"/>
-    <Option Name="WTIesExportSim" Val="13"/>
-    <Option Name="WTVcsExportSim" Val="13"/>
-    <Option Name="WTRivieraExportSim" Val="13"/>
-    <Option Name="WTActivehdlExportSim" Val="13"/>
+    <Option Name="WTXSimExportSim" Val="16"/>
+    <Option Name="WTModelSimExportSim" Val="16"/>
+    <Option Name="WTQuestaExportSim" Val="16"/>
+    <Option Name="WTIesExportSim" Val="16"/>
+    <Option Name="WTVcsExportSim" Val="16"/>
+    <Option Name="WTRivieraExportSim" Val="16"/>
+    <Option Name="WTActivehdlExportSim" Val="16"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -55,6 +55,13 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/new/CPU.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/Clock.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -97,20 +104,20 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/CPU.v">
+      <File Path="$PSRCDIR/sources_1/new/cpu_wrap.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="c:/Users/10943/Downloads/Minisys1Assemblerv2.2/Minisys1Assemblerv2.2/output/prgmip32.coe">
+      <File Path="$PPRDIR/../Data/coe_files/cpu_test_1_imem.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="c:/Users/10943/Downloads/Minisys1Assemblerv2.2/Minisys1Assemblerv2.2/output/dmem32.coe">
+      <File Path="$PPRDIR/../Data/coe_files/cpu_test_1_dmem.coe">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -118,12 +125,19 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="CPU"/>
+        <Option Name="TopModule" Val="cpu_wrap"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
+      <File Path="$PSRCDIR/constrs_1/new/cpu_test_1_cons.xdc">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/cpu_test_1_cons.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
@@ -256,7 +270,7 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tfgg484-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
@@ -269,6 +283,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>

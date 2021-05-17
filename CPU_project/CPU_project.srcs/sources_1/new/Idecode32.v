@@ -127,7 +127,7 @@ begin
                 io_output <= Registers[4];
             else if (Registers[2] == 32'd111)
             begin
-                if(counter == 32'h00000010) // need to be modified   015e_f3c0
+                if(counter == 32'h015e_f3c0) // need to be modified   015e_f3c0
                 begin
                     Pause <= 1'b0;
                     counter <= 32'h0000_0000;
