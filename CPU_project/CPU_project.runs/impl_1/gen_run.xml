@@ -1,65 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621222649">
-  <File Type="PWROPT-DCP" Name="cpu_wrap_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="cpu_wrap_power_routed.rpt"/>
   <File Type="PA-TCL" Name="cpu_wrap.tcl"/>
+  <File Type="PWROPT-DCP" Name="cpu_wrap_pwropt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="cpu_wrap_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="cpu_wrap_reports.tcl"/>
   <File Type="BG-DRC" Name="cpu_wrap.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="cpu_wrap_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="cpu_wrap_timing_summary_init.rpt"/>
   <File Type="OPT-HWDEF" Name="cpu_wrap.hwdef"/>
   <File Type="OPT-DCP" Name="cpu_wrap_opt.dcp"/>
   <File Type="OPT-DRC" Name="cpu_wrap_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="cpu_wrap_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="cpu_wrap_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="cpu_wrap_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="cpu_wrap_placed.dcp"/>
   <File Type="PLACE-IO" Name="cpu_wrap_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="cpu_wrap_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="cpu_wrap_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="cpu_wrap_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="cpu_wrap_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="cpu_wrap_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="cpu_wrap_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="cpu_wrap_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="cpu_wrap_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="cpu_wrap_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="cpu_wrap_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="cpu_wrap_drc_physopted.rpt"/>
   <File Type="BG-BIT" Name="cpu_wrap.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="cpu_wrap_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="cpu_wrap_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="cpu_wrap_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="cpu_wrap_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="cpu_wrap_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="cpu_wrap_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="cpu_wrap.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="cpu_wrap_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="cpu_wrap.bgn"/>
+  <File Type="BITSTR-MSK" Name="cpu_wrap.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="cpu_wrap_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="cpu_wrap.rbt"/>
+  <File Type="BG-BGN" Name="cpu_wrap.bgn"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="cpu_wrap_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="cpu_wrap.bin"/>
+  <File Type="BITSTR-RBT" Name="cpu_wrap.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="cpu_wrap_methodology_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="cpu_wrap.bin"/>
   <File Type="ROUTE-PWR-RPX" Name="cpu_wrap_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="cpu_wrap_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="cpu_wrap_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="cpu_wrap_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="cpu_wrap_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="cpu_wrap_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="cpu_wrap_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="cpu_wrap.vdi"/>
   <File Type="ROUTE-CLK" Name="cpu_wrap_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="cpu_wrap.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="cpu_wrap_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="cpu_wrap_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="cpu_wrap_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="cpu_wrap_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="cpu_wrap_timing_summary_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="cpu_wrap.nky"/>
   <File Type="BITSTR-BMM" Name="cpu_wrap_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="cpu_wrap.mmi"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="cpu_wrap.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="cpu_wrap.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>

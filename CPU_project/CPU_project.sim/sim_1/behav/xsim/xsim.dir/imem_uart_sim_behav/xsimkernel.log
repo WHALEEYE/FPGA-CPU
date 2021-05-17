@@ -1,0 +1,7 @@
+Running: xsim.dir/imem_uart_sim_behav/xsimk.exe -simmode gui -wdb imem_uart_sim_behav.wdb -simrunnum 0 -socket 52428
+Design successfully loaded
+Design Loading Memory Usage: 11744 KB (Peak: 11744 KB)
+Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 12688 KB (Peak: 12688 KB)
+Simulation CPU Usage: 46 ms
