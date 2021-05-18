@@ -74,9 +74,9 @@ assign MEM_ena = (main_counter == 2'b10) ? 1'b1 : 1'b0;
 assign WB_ena = (main_counter == 2'b11) ? 1'b1 : 1'b0;
 
 wire rst;
-wire uart_reset;
+// wire uart_reset;
 assign rst = reset | renew;
-assign uart_reset = reset | ~renew;
+// assign uart_reset = reset | ~renew;
 
 Clock cpu_clk(clkin, clock);
 
@@ -205,7 +205,7 @@ dmemory32 cpu_ram(
           );
 
 uart_read uread(
-              .reset(uart_reset),
+              .reset(reset),
               .clock(clkin),
               .din(din),
               .dout(dout),

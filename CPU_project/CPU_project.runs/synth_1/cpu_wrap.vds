@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon May 17 23:40:29 2021
-# Process ID: 9460
+# Start of session at: Tue May 18 13:09:05 2021
+# Process ID: 7312
 # Current directory: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1
 # Command line: vivado.exe -log cpu_wrap.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_wrap.tcl
 # Log file: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/cpu_wrap.vds
@@ -15,19 +15,19 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 17540 
+INFO: Helper process launched with PID 20228 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 404.750 ; gain = 100.379
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 405.477 ; gain = 100.945
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'cpu_wrap' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/cpu_wrap.v:23]
 INFO: [Synth 8-638] synthesizing module 'CPU' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v:23]
 INFO: [Synth 8-638] synthesizing module 'Clock' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v:23]
-INFO: [Synth 8-638] synthesizing module 'cpuclk' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/realtime/cpuclk_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/cpuclk_stub.v:5]
 INFO: [Synth 8-256] done synthesizing module 'Clock' (2#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v:23]
 INFO: [Synth 8-638] synthesizing module 'Ifetc32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:23]
-INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/realtime/IRAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'IRAM' (3#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/realtime/IRAM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/IRAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'IRAM' (3#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/IRAM_stub.v:6]
 WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'IRAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:164]
 INFO: [Synth 8-256] done synthesizing module 'Ifetc32' (4#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:23]
 INFO: [Synth 8-638] synthesizing module 'control32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/control32.v:23]
@@ -37,11 +37,11 @@ INFO: [Synth 8-256] done synthesizing module 'Idecode32' (6#1) [D:/Documents/SUS
 INFO: [Synth 8-638] synthesizing module 'Executs32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:23]
 INFO: [Synth 8-256] done synthesizing module 'Executs32' (7#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:23]
 INFO: [Synth 8-638] synthesizing module 'dmemory32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/dmemory32.v:23]
-INFO: [Synth 8-638] synthesizing module 'RAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/realtime/RAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/realtime/RAM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'RAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/RAM_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'dmemory32' (9#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/dmemory32.v:23]
 INFO: [Synth 8-638] synthesizing module 'uart_read' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:23]
-	Parameter period bound to: 6 - type: integer 
+	Parameter period bound to: 10416 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'uart_read' (10#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:23]
 INFO: [Synth 8-256] done synthesizing module 'CPU' (11#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v:23]
 INFO: [Synth 8-256] done synthesizing module 'cpu_wrap' (12#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/cpu_wrap.v:23]
@@ -70,7 +70,7 @@ WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[4]
 WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[3]
 WARNING: [Synth 8-3331] design Executs32 has unconnected port Jr
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 457.688 ; gain = 153.316
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 457.727 ; gain = 153.195
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -80,19 +80,19 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 457.688 ; gain = 153.316
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 457.727 ; gain = 153.195
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
-Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
-Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
-Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
-Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
-Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
 Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]
 Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_wrap_propImpl.xdc].
@@ -102,27 +102,27 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 822.152 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 821.773 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 822.152 ; gain = 517.781
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 821.773 ; gain = 517.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 822.152 ; gain = 517.781
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 821.773 ; gain = 517.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-9460-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for test_cpu/cpu_clk/clk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_cpu/cpu_ifetch/instmem. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_cpu/cpu_ram/ram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 822.152 ; gain = 517.781
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 821.773 ; gain = 517.242
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "R_format" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "I_format" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -180,7 +180,7 @@ INFO: [Synth 8-5544] ROM "WB_ena" won't be mapped to Block RAM because address s
 WARNING: [Synth 8-327] inferring latch for variable 'Next_PC_reg' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:78]
 WARNING: [Synth 8-327] inferring latch for variable 'ALU_output_mux_reg' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:88]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 822.152 ; gain = 517.781
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 821.773 ; gain = 517.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -582,7 +582,7 @@ CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'VCC' [D
 INFO: [Common 17-14] Message 'Synth 8-3352' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:113]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 822.152 ; gain = 517.781
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 821.773 ; gain = 517.242
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -596,13 +596,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'test_cpu/cpu_clk/clk/clk_out1' to pin 'test_cpu/cpu_clk/clk/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 848.246 ; gain = 543.875
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 844.910 ; gain = 540.379
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 862.684 ; gain = 558.312
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 858.828 ; gain = 554.297
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -614,7 +614,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -638,7 +638,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -651,7 +651,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -663,25 +663,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -712,10 +712,11 @@ Report Cell Usage:
 |10    |LUT6   |  1308|
 |11    |MUXF7  |   286|
 |12    |MUXF8  |     1|
-|13    |FDCE   |  1187|
-|14    |LD     |    31|
-|15    |IBUF   |     2|
-|16    |OBUF   |    16|
+|13    |FDCE   |  1186|
+|14    |FDPE   |     1|
+|15    |LD     |    31|
+|16    |IBUF   |     2|
+|17    |OBUF   |    16|
 +------+-------+------+
 
 Report Instance Areas: 
@@ -731,11 +732,11 @@ Report Instance Areas:
 |7     |    cpu_ram     |dmemory32 |    32|
 +------+----------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 150 critical warnings and 247 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:48 . Memory (MB): peak = 920.133 ; gain = 251.297
-Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 920.133 ; gain = 615.762
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:48 . Memory (MB): peak = 915.234 ; gain = 246.656
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 368 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -749,8 +750,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 INFO: [Common 17-83] Releasing license: Synthesis
 116 Infos, 138 Warnings, 150 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 920.133 ; gain = 627.242
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 915.234 ; gain = 622.223
 INFO: [Common 17-1381] The checkpoint 'D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/cpu_wrap.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_wrap_utilization_synth.rpt -pb cpu_wrap_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 920.133 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon May 17 23:41:34 2021...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 915.234 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue May 18 13:10:11 2021...

@@ -26,7 +26,7 @@ module uart_read(
            output reg dout_vld
        );
 
-parameter period = 6;                           //9600 baud rate 10416
+parameter period = 10416;                           //9600 baud rate 10416
 reg     [31: 0]     cnt0;                           //The counter to count the original clock posedges
 reg     [3: 0]      cnt1;                           //The counter to count the bits received in one frame
 wire                add_cnt0, end_cnt0, add_cnt1, end_cnt1;

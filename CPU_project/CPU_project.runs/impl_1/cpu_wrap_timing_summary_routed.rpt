@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Mon May 17 23:43:10 2021
+| Date         : Tue May 18 13:11:44 2021
 | Host         : Orcinus-orca running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file cpu_wrap_timing_summary_routed.rpt -rpx cpu_wrap_timing_summary_routed.rpx -warn_on_violation
 | Design       : cpu_wrap
@@ -1602,7 +1602,7 @@ Low Pulse Width   Slow    FDCE/C              n/a            0.500         21.73
 Low Pulse Width   Fast    FDCE/C              n/a            0.500         21.739      21.239     SLICE_X30Y58    test_cpu/cpu_decoder/Registers_reg[16][23]/C
 Low Pulse Width   Fast    FDCE/C              n/a            0.500         21.739      21.239     SLICE_X32Y76    test_cpu/cpu_decoder/Registers_reg[16][24]/C
 Low Pulse Width   Fast    FDCE/C              n/a            0.500         21.739      21.239     SLICE_X32Y76    test_cpu/cpu_decoder/Registers_reg[16][26]/C
-High Pulse Width  Slow    FDCE/C              n/a            0.500         21.739      21.239     SLICE_X43Y58    test_cpu/main_counter_reg[0]/C
+High Pulse Width  Slow    FDPE/C              n/a            0.500         21.739      21.239     SLICE_X43Y58    test_cpu/main_counter_reg[0]/C
 High Pulse Width  Slow    FDCE/C              n/a            0.500         21.739      21.239     SLICE_X43Y58    test_cpu/main_counter_reg[1]/C
 High Pulse Width  Slow    FDRE/C              n/a            0.500         21.739      21.239     SLICE_X52Y74    test_cpu/cpu_ifetch/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
 High Pulse Width  Fast    FDRE/C              n/a            0.500         21.739      21.239     SLICE_X52Y74    test_cpu/cpu_ifetch/instmem/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C

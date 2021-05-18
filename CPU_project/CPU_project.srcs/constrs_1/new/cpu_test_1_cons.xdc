@@ -39,3 +39,4 @@ set_property IOSTANDARD LVCMOS33 [get_ports din]
 set_property IOSTANDARD LVCMOS33 [get_ports renew]
 set_property PACKAGE_PIN Y19 [get_ports din]
 set_property PACKAGE_PIN R4 [get_ports renew]
+

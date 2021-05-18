@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date             : Mon May 17 23:43:10 2021
+| Date             : Tue May 18 13:11:43 2021
 | Host             : Orcinus-orca running 64-bit major release  (build 9200)
 | Command          : report_power -file cpu_wrap_power_routed.rpt -pb cpu_wrap_power_summary_routed.pb -rpx cpu_wrap_power_routed.rpx
 | Design           : cpu_wrap
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.199        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.113        |
+| Dynamic (W)              | 0.114        |
 | Device Static (W)        | 0.085        |
 | Effective TJA (C/W)      | 2.7          |
 | Max Ambient (C)          | 84.5         |
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.035 |       0.019 |      0.016 |
+| Vccint    |       1.000 |     0.036 |       0.020 |      0.016 |
 | Vccaux    |       1.800 |     0.070 |       0.052 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -145,8 +145,8 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
-| cpu_wrap                                         |     0.113 |
-|   test_cpu                                       |     0.113 |
+| cpu_wrap                                         |     0.114 |
+|   test_cpu                                       |     0.114 |
 |     cpu_alu                                      |    <0.001 |
 |     cpu_clk                                      |     0.103 |
 |       clk                                        |     0.103 |

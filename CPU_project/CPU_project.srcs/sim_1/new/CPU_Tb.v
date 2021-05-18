@@ -224,13 +224,13 @@ dmemory32 cpu_ram(
               .read_data(read_data)
           );
 
-uart_read uread(
-              .reset(uart_reset),
-              .clock(clock),
-              .din(din),
-              .dout(dout),
-              .dout_vld(dout_vld)
-          );
+uart_read_Test ureadtest(
+                   .reset(uart_reset),
+                   .clock(clock),
+                   .din(din),
+                   .dout(dout),
+                   .dout_vld(dout_vld)
+               );
 
 
 initial

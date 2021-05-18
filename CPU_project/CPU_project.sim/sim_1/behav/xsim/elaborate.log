@@ -1,28 +1,14 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Software/Vivado2017/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 75bd149384dc40bc8252e62c01933515 --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_1 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot CPU_Tb_behav xil_defaultlib.CPU_Tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Software/Vivado2017/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 75bd149384dc40bc8252e62c01933515 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot uart_wrap_sim_behav xil_defaultlib.uart_wrap_sim xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 14 for port addra [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sim_1/new/Ifetc32_Test.v:164]
-WARNING: [VRFC 10-1783] select index 62 into current_contents is out of bounds [/wrk/2017.4/nightly/2017_12_15_2086221/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_4/simulation/blk_mem_gen_v8_4.v:2420]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_output_stage(...
-Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_softecc_outpu...
-Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_mem_module(C_...
-Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1(C_FAMILY="art...
-Compiling module xil_defaultlib.IRAM
-Compiling module xil_defaultlib.Ifetc32
-Compiling module xil_defaultlib.control32
-Compiling module xil_defaultlib.Idecode32_Test
-Compiling module xil_defaultlib.Executs32
-Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1_mem_module(C_...
-Compiling module blk_mem_gen_v8_4_1.blk_mem_gen_v8_4_1(C_FAMILY="art...
-Compiling module xil_defaultlib.RAM
-Compiling module xil_defaultlib.dmemory32
-Compiling module xil_defaultlib.uart_read
-Compiling module xil_defaultlib.CPU_Tb
+Compiling module xil_defaultlib.uart_read_Test
+Compiling module xil_defaultlib.uart_wrap_test
+Compiling module xil_defaultlib.uart_wrap_sim
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot CPU_Tb_behav
+Built simulation snapshot uart_wrap_sim_behav
