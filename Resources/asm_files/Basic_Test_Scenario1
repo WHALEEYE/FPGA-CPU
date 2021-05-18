@@ -1,0 +1,90 @@
+.data
+.text
+	Loop:
+	addi $v0,  $zero, 5
+	syscall
+	
+	add $a0, $v0, $zero
+	srl $a2, $a0, 16
+	and $s1, $a2, 1
+	srl $a2, $a2, 1
+	and $s2, $a2, 1
+	srl $a2, $a2, 1
+	and $s3, $a2, 1
+	beq $s3, 1, first_bit_one
+
+	beq $s2, 1, first_zero_second_one
+	beq $s1, 1, zzo
+	zzz:
+	addi $v1, $zero, 21845
+	jal output
+	jal zawaludo
+	sll $v1, $v1, 1
+	jal output
+	jal zawaludo
+	j Loop
+	
+	
+	first_zero_second_one:
+	beq $s1, 0, zoz
+	
+	zoo:
+	addi $v1, $v1, -1
+	jal output
+	jal zawaludo
+	j  Loop
+	
+	
+	first_bit_one: 
+	beq $s2, 0, first_one_second_zero
+	beq $s1, 0, ooz
+	jal output
+	jal zawaludo
+	j  Loop
+		
+	
+	first_one_second_zero:
+	beq $s1, 0, ozz
+	
+	ozo:
+	srl $v1, $v1, 1
+	jal output 
+	jal zawaludo
+	j  Loop
+	
+	ozz: 
+	sll $v1, $v1, 1
+	jal output
+	jal zawaludo
+	j  Loop
+	
+	ooz:
+	sra $v1, $v1, 1
+	jal output
+	jal zawaludo
+	j  Loop
+	
+	zoz:
+	addi $v1, $v1, 1
+	jal output
+	jal zawaludo
+	j  Loop
+	
+	zzo:
+	add $v1, $a0, $zero
+	sll $v1, $v1, 16
+	srl $v1, $v1, 16
+	jal output
+	jal zawaludo
+	j  Loop
+	
+	output:
+	add $a0, $v1, $zero
+	addi $v0, $zero, 1
+	syscall 
+	jr $ra
+	
+	zawaludo:
+	addi $v0, $zero, 111
+	syscall
+	jr $ra
