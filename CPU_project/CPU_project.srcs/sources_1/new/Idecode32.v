@@ -21,7 +21,7 @@
 
 
 module Idecode32(read_data_1, read_data_2, Instruction, read_data, ALU_result, Jal, RegWrite, MemtoReg, RegDST,
-                 imme_extend, clock, reset, opcplus4, ID_ena, WB_ena, io_input, io_output, Pause, syscall);
+                 imme_extend, clock, reset, opcplus4, ID_ena, WB_ena, io_input, io_output, Pause);
 // input
 input       [31:0]  Instruction;
 input       [31:0]  read_data;
@@ -41,7 +41,6 @@ output reg  [31:0]  read_data_2;
 output reg  [31:0]  imme_extend;
 output reg  [31:0]  io_output;
 output reg          Pause;              // 1s stop
-output reg          syscall;
 
 // decode the instruction
 wire        [5:0]   opcode;
@@ -114,13 +113,12 @@ begin
         io_output <= 32'h00000000;
         imme_extend <= 32'h00000000;
         counter <= 32'h00000000;
-        {syscall, Pause} <= 2'b00;
+        Pause <= 1'b0;
     end
     else if(ID_ena)
     begin
         if(Instruction == 32'hffff_ffff)
         begin
-            syscall <= 1'b1;
             if(Registers[2] == 32'd5)
                 Registers[2] <= io_input;
             else if (Registers[2] == 32'd1)
@@ -141,7 +139,6 @@ begin
         end
         else
         begin
-            syscall <= 1'b0;
             imme_extend <= {{16{immediate[15]}}, immediate[15:0]};
             read_data_1 <= Registers[rs];
             read_data_2 <= Registers[rt];

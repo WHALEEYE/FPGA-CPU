@@ -20,17 +20,29 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module cpu_wrap(clkin, reset, renew, din, test_output);
+module cpu_wrap(clkin, reset, renew, din, tube_out, senario2, mode, number_in, led_out, tube_bit_select, tube_seg_select);
 input               clkin;
 input               reset;
-input               din;
 input               renew;
-output  [15:0]      test_output;
+input               din;
+input               tube_out;
+input               senario2;
+input   [2:0]       mode;
+input   [15:0]      number_in;
+output  [15:0]      led_out;
+output  [7:0]       tube_bit_select;
+output  [7:0]       tube_seg_select;
 
 wire    [31:0]      io_input;
 wire    [31:0]      io_output;
-assign io_input = 32'd0;
-assign test_output = io_output[15:0];
+wire                led_reset;
+wire                tube_reset;
+
+assign tube_reset = reset | ~tube_out;
+assign led_reset = reset | tube_out;
+
+assign io_input = {senario2, 12'b0000_0000_0000, mode, number_in};
+assign led_out = led_reset ? 16'b0000_0000_0000_00000 : io_output[15:0];
 
 CPU test_cpu(
         .io_input(io_input),
@@ -40,4 +52,14 @@ CPU test_cpu(
         .din(din),
         .io_output(io_output)
     );
+
+Tube tube_parser(
+         .clkin(clkin),
+         .rst(tube_reset),
+         .input_num(io_output),
+         .DIG(tube_bit_select),
+         .Y(tube_seg_select)
+     );
+
+
 endmodule

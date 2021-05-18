@@ -89,7 +89,7 @@ wire uart_reset;
 assign rst = reset | renew;
 assign uart_reset = reset | ~renew;
 
-always @(negedge clock or posedge rst)
+always @(posedge clock or posedge rst)
 begin
     if(rst)
     begin
@@ -171,7 +171,8 @@ control32 cpu_ctrl(
               .Jal(Jal),
               .I_format(I_format),
               .Sftmd(Sftmd),
-              .ALUOp(ALUOp)
+              .ALUOp(ALUOp),
+              .syscall(syscall)
           );
 
 Idecode32_Test cpu_decoder(
@@ -193,7 +194,6 @@ Idecode32_Test cpu_decoder(
                    .io_input(io_input),
                    .io_output(io_output),
                    .Pause(Pause),
-                   .syscall(syscall),
                    .test_reg(test_reg)
                );
 

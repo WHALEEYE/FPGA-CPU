@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue May 18 13:09:05 2021
-# Process ID: 7312
+# Start of session at: Wed May 19 00:59:59 2021
+# Process ID: 18388
 # Current directory: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1
 # Command line: vivado.exe -log cpu_wrap.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_wrap.tcl
 # Log file: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/cpu_wrap.vds
@@ -15,20 +15,20 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 20228 
+INFO: Helper process launched with PID 22348 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 405.477 ; gain = 100.945
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 405.535 ; gain = 101.500
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'cpu_wrap' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/cpu_wrap.v:23]
 INFO: [Synth 8-638] synthesizing module 'CPU' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v:23]
 INFO: [Synth 8-638] synthesizing module 'Clock' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v:23]
-INFO: [Synth 8-638] synthesizing module 'cpuclk' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/cpuclk_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'cpuclk' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/realtime/cpuclk_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'cpuclk' (1#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/realtime/cpuclk_stub.v:5]
 INFO: [Synth 8-256] done synthesizing module 'Clock' (2#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v:23]
 INFO: [Synth 8-638] synthesizing module 'Ifetc32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:23]
-INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/IRAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'IRAM' (3#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/IRAM_stub.v:6]
-WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'IRAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:164]
+INFO: [Synth 8-638] synthesizing module 'IRAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/realtime/IRAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'IRAM' (3#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/realtime/IRAM_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (14) of module 'IRAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:98]
 INFO: [Synth 8-256] done synthesizing module 'Ifetc32' (4#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:23]
 INFO: [Synth 8-638] synthesizing module 'control32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/control32.v:23]
 INFO: [Synth 8-256] done synthesizing module 'control32' (5#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/control32.v:23]
@@ -37,14 +37,23 @@ INFO: [Synth 8-256] done synthesizing module 'Idecode32' (6#1) [D:/Documents/SUS
 INFO: [Synth 8-638] synthesizing module 'Executs32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:23]
 INFO: [Synth 8-256] done synthesizing module 'Executs32' (7#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:23]
 INFO: [Synth 8-638] synthesizing module 'dmemory32' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/dmemory32.v:23]
-INFO: [Synth 8-638] synthesizing module 'RAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/RAM_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/realtime/RAM_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'RAM' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/realtime/RAM_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'RAM' (8#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/realtime/RAM_stub.v:6]
 INFO: [Synth 8-256] done synthesizing module 'dmemory32' (9#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/dmemory32.v:23]
+INFO: [Synth 8-638] synthesizing module 'uart_wrap' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_wrap.v:23]
 INFO: [Synth 8-638] synthesizing module 'uart_read' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:23]
 	Parameter period bound to: 10416 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'uart_read' (10#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:23]
-INFO: [Synth 8-256] done synthesizing module 'CPU' (11#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v:23]
-INFO: [Synth 8-256] done synthesizing module 'cpu_wrap' (12#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/cpu_wrap.v:23]
+INFO: [Synth 8-256] done synthesizing module 'uart_wrap' (11#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_wrap.v:23]
+INFO: [Synth 8-256] done synthesizing module 'CPU' (12#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v:23]
+INFO: [Synth 8-638] synthesizing module 'Tube' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:23]
+	Parameter period bound to: 200000 - type: integer 
+INFO: [Synth 8-226] default block is never used [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:99]
+INFO: [Synth 8-226] default block is never used [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:123]
+WARNING: [Synth 8-567] referenced signal 'tube_r' should be on the sensitivity list [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:121]
+WARNING: [Synth 8-567] referenced signal 'num_r' should be on the sensitivity list [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:121]
+INFO: [Synth 8-256] done synthesizing module 'Tube' (13#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:23]
+INFO: [Synth 8-256] done synthesizing module 'cpu_wrap' (14#1) [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/cpu_wrap.v:23]
 WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[31]
 WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[30]
 WARNING: [Synth 8-3331] design dmemory32 has unconnected port address[29]
@@ -70,7 +79,7 @@ WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[4]
 WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[3]
 WARNING: [Synth 8-3331] design Executs32 has unconnected port Jr
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 457.727 ; gain = 153.195
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 457.875 ; gain = 153.840
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -80,49 +89,47 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 457.727 ; gain = 153.195
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 457.875 ; gain = 153.840
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tfgg484-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
-Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
-Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
-Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
-Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
-Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
-Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]
-Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_test_1_cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_wrap_propImpl.xdc].
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/dcp3/cpuclk_in_context.xdc] for cell 'test_cpu/cpu_clk/clk'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/dcp4/IRAM_in_context.xdc] for cell 'test_cpu/cpu_ifetch/instmem'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-18388-Orcinus-orca/dcp5/RAM_in_context.xdc] for cell 'test_cpu/cpu_ram/ram'
+Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc]
+Finished Parsing XDC File [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/cpu_wrap_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/cpu_wrap_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 821.773 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 823.492 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 821.773 ; gain = 517.242
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 823.492 ; gain = 519.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tfgg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 821.773 ; gain = 517.242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 823.492 ; gain = 519.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clkin. (constraint file  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/.Xil/Vivado-7312-Orcinus-orca/dcp3/cpuclk_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for test_cpu/cpu_clk/clk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_cpu/cpu_ifetch/instmem. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for test_cpu/cpu_ram/ram. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 821.773 ; gain = 517.242
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 823.492 ; gain = 519.457
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "R_format" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "I_format" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -132,6 +139,7 @@ INFO: [Synth 8-5546] ROM "Branch" won't be mapped to RAM because it is too spars
 INFO: [Synth 8-5546] ROM "nBranch" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Jmp" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Jal" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "syscall" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Registers_reg[0]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "Registers_reg[1]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "Registers" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -169,7 +177,6 @@ INFO: [Synth 8-5545] ROM "read_data_1" won't be mapped to RAM because address si
 INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Pause" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "syscall" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 WARNING: [Synth 8-6014] Unused sequential element cnt0_reg was removed.  [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:60]
 WARNING: [Synth 8-6014] Unused sequential element cnt1_reg was removed.  [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:78]
@@ -177,10 +184,12 @@ INFO: [Synth 8-5544] ROM "IF_ena" won't be mapped to Block RAM because address s
 INFO: [Synth 8-5544] ROM "MEM_ena" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ID_ena" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "WB_ena" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
-WARNING: [Synth 8-327] inferring latch for variable 'Next_PC_reg' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:78]
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-327] inferring latch for variable 'Next_PC_reg' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:67]
 WARNING: [Synth 8-327] inferring latch for variable 'ALU_output_mux_reg' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v:88]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 821.773 ; gain = 517.242
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 823.492 ; gain = 519.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -194,26 +203,34 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     33 Bit       Adders := 1     
-	   2 Input     32 Bit       Adders := 5     
+	   2 Input     32 Bit       Adders := 6     
 	   3 Input     32 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 38    
-	                8 Bit    Registers := 1     
+	               32 Bit    Registers := 42    
+	                8 Bit    Registers := 2     
+	                7 Bit    Registers := 11    
 	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 14    
-	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 2     
-	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 63    
 	   4 Input      1 Bit        Muxes := 4     
-	   2 Input      1 Bit        Muxes := 61    
 	   3 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -222,28 +239,29 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module cpu_wrap 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
 Module Ifetc32 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 5     
-	   4 Input     32 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 4     
 Module control32 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 15    
 Module Idecode32 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 37    
-	                1 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 4     
 	   2 Input      5 Bit        Muxes := 2     
@@ -275,12 +293,43 @@ Detailed RTL Component Info :
 	   2 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
+Module uart_wrap 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 3     
 Module CPU 
 Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
 +---Muxes : 
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 4     
+Module Tube 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 11    
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -300,13 +349,14 @@ INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (
 INFO: [Synth 8-5545] ROM "counter" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Pause" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "Zero" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5544] ROM "test_cpu/cpu_ifetch/" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "clk" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "test_cpu/cpu_ctrl/nBranch" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "test_cpu/cpu_ctrl/Branch" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "test_cpu/cpu_ctrl/I_format" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "test_cpu/cpu_ctrl/R_format" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element test_cpu/uread/cnt1_reg was removed.  [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:78]
-WARNING: [Synth 8-6014] Unused sequential element test_cpu/uread/cnt0_reg was removed.  [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:60]
+WARNING: [Synth 8-6014] Unused sequential element test_cpu/uwrap/ur/cnt1_reg was removed.  [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:78]
+WARNING: [Synth 8-6014] Unused sequential element test_cpu/uwrap/ur/cnt0_reg was removed.  [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v:60]
 WARNING: [Synth 8-3331] design Executs32 has unconnected port Function_opcode[5]
 WARNING: [Synth 8-3331] design Executs32 has unconnected port Function_opcode[4]
 WARNING: [Synth 8-3331] design Executs32 has unconnected port opcode[5]
@@ -329,260 +379,224 @@ INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[20]'
 INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[30]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[26]'
 INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[22]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[26]'
 INFO: [Synth 8-3886] merging instance 'test_cpu/cpu_decoder/imme_extend_reg[26]' (FDCE) to 'test_cpu/cpu_decoder/imme_extend_reg[18]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[9][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[8][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[6][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[3][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[2][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[9][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[8][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[7][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[6][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[5][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[4][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[3][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[2][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[1][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[9][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[8][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[7][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[6][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[5][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[3][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[2][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[1][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[0][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[9][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[8][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[7][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[6][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[5][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[4][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[3][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[1][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[9][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[8][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[7][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[6][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[5][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[1][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[0][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[9][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[8][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[7][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[6][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[5][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[3][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[1][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[0][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[9][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[8][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[7][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[6][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[5][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[4][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[3][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (tube_parser/\tube_r_reg[2][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[1][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tube_parser/\tube_r_reg[0][6] )
 WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/Next_PC_reg[0]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/write_ena_reg) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/write_ena_reg/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:123]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:123]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:123]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/write_ena_reg__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[31]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[30]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[29]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[28]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[27]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[26]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[25]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[24]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[23]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[22]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[21]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[20]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[19]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[18]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[17]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[16]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[15]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[14]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[13]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[13]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[12]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[12]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[11]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[11]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[10]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[10]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[9]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[9]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[8]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[8]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[7]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[7]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[6]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[6]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[5]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[5]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[4]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[4]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[3]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[3]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[2]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[2]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[1]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[1]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[0]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/addr_pointer_reg[0]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:122]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[31]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[30]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[29]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[28]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[27]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[26]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[25]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[24]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[23]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[22]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[21]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[20]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[19]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[18]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[17]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[16]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[15]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[14]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[13]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[12]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[11]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[10]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[9]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[8]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[7]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[6]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[5]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[4]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[3]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[2]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[1]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/addr_pointer_reg[0]__0) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[31]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[30]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[29]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[28]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[27]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[26]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[25]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[24]) is unused and will be removed from module cpu_wrap.
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[23]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[23]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[22]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[22]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[21]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[21]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[20]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[20]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[19]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[19]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[18]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[18]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[17]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[17]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[16]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[16]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[15]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[15]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[14]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[14]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[13]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[13]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[12]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[12]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[11]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[11]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[10]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[10]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[9]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[9]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[8]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[8]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[7]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[7]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[6]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[6]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[5]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[5]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[4]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[4]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[3]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[3]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[2]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[2]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[1]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[1]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[0]) is unused and will be removed from module cpu_wrap.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[0]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:124]
-WARNING: [Synth 8-3332] Sequential element (test_cpu/cpu_ifetch/buffer_reg[31]__0) is unused and will be removed from module cpu_wrap.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[31]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[30]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[29]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[28]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[27]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[26]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[25]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[24]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[23]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[22]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[21]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[20]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[19]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[18]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[17]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (io_output_reg[16]) is unused and will be removed from module Idecode32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[31]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[30]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[29]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[28]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[27]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[26]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[25]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[24]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[23]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[22]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[21]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[20]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[19]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[18]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[17]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[16]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[15]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[14]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[13]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[12]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[11]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[10]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[9]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[8]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[7]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[6]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[5]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[4]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[3]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[2]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[1]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (ALU_output_mux_reg[0]) is unused and will be removed from module Executs32.
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[7]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[7]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[6]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[6]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[5]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[5]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[4]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[4]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[3]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[3]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[2]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[2]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[1]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[1]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (DIG_r_reg[0]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/DIG_r_reg[0]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:69]
+WARNING: [Synth 8-3332] Sequential element (Y_r_reg[6]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/Y_r_reg[6]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+WARNING: [Synth 8-3332] Sequential element (Y_r_reg[5]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/Y_r_reg[5]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+WARNING: [Synth 8-3332] Sequential element (Y_r_reg[4]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/Y_r_reg[4]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+WARNING: [Synth 8-3332] Sequential element (Y_r_reg[3]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/Y_r_reg[3]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+WARNING: [Synth 8-3332] Sequential element (Y_r_reg[2]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/Y_r_reg[2]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+WARNING: [Synth 8-3332] Sequential element (Y_r_reg[1]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/Y_r_reg[1]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+WARNING: [Synth 8-3332] Sequential element (Y_r_reg[0]) is unused and will be removed from module Tube.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'tube_parser/Y_r_reg[0]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v:68]
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[31]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[30]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[29]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[28]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[27]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[26]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[25]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[24]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[23]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[22]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[21]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[20]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[19]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[18]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[17]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[16]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[15]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[14]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[13]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[12]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[11]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[10]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[9]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[8]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[7]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[6]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[5]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[4]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[3]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[2]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[1]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (cnt_reg[0]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (clk_reg) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (scan_cnt_reg[2]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (scan_cnt_reg[1]) is unused and will be removed from module Tube.
+WARNING: [Synth 8-3332] Sequential element (scan_cnt_reg[0]) is unused and will be removed from module Tube.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[31]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[30]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[29]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[28]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[27]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[26]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[25]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/buffer_reg[24]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:69]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/counter_reg[1]/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:126]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:126]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:126]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/counter_reg[0]__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:114]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'GND' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:114]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:114]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 1st driver pin 'test_cpu/cpu_ifetch/init_reg__0/Q' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:113]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net Q with 2nd driver pin 'VCC' [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:113]
-INFO: [Common 17-14] Message 'Synth 8-3352' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-5559] multi-driven net Q is connected to constant driver, other driver is ignored [D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v:113]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 821.773 ; gain = 517.242
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 823.492 ; gain = 519.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -596,13 +610,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'test_cpu/cpu_clk/clk/clk_out1' to pin 'test_cpu/cpu_clk/clk/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:49 . Memory (MB): peak = 844.910 ; gain = 540.379
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:49 ; elapsed = 00:00:50 . Memory (MB): peak = 851.133 ; gain = 547.098
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 858.828 ; gain = 554.297
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 855.242 ; gain = 551.207
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -614,7 +628,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished Technology Mapping : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -638,7 +652,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -651,7 +665,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -663,25 +677,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -703,44 +717,45 @@ Report Cell Usage:
 |1     |IRAM   |     1|
 |2     |RAM    |     1|
 |3     |cpuclk |     1|
-|4     |CARRY4 |    48|
-|5     |LUT1   |     3|
-|6     |LUT2   |    81|
-|7     |LUT3   |   141|
-|8     |LUT4   |   177|
-|9     |LUT5   |   312|
-|10    |LUT6   |  1308|
-|11    |MUXF7  |   286|
-|12    |MUXF8  |     1|
-|13    |FDCE   |  1186|
-|14    |FDPE   |     1|
+|4     |BUFG   |     2|
+|5     |CARRY4 |    60|
+|6     |LUT1   |     5|
+|7     |LUT2   |    84|
+|8     |LUT3   |   203|
+|9     |LUT4   |   174|
+|10    |LUT5   |   352|
+|11    |LUT6   |  1228|
+|12    |MUXF7  |   284|
+|13    |FDCE   |  1303|
+|14    |FDPE   |     5|
 |15    |LD     |    31|
-|16    |IBUF   |     2|
-|17    |OBUF   |    16|
+|16    |IBUF   |    25|
+|17    |OBUF   |    32|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+----------------+----------+------+
 |      |Instance        |Module    |Cells |
 +------+----------------+----------+------+
-|1     |top             |          |  3658|
-|2     |  test_cpu      |CPU       |  3640|
+|1     |top             |          |  3853|
+|2     |  test_cpu      |CPU       |  3794|
 |3     |    cpu_alu     |Executs32 |    77|
 |4     |    cpu_clk     |Clock     |     2|
-|5     |    cpu_decoder |Idecode32 |  2913|
-|6     |    cpu_ifetch  |Ifetc32   |   613|
+|5     |    cpu_decoder |Idecode32 |  2899|
+|6     |    cpu_ifetch  |Ifetc32   |   583|
 |7     |    cpu_ram     |dmemory32 |    32|
+|8     |    uwrap       |uart_wrap |   199|
+|9     |      ur        |uart_read |    99|
 +------+----------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 920.820 ; gain = 616.785
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 150 critical warnings and 247 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:48 . Memory (MB): peak = 915.234 ; gain = 246.656
-Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 915.234 ; gain = 610.703
+Synthesis finished with 0 errors, 45 critical warnings and 209 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:49 . Memory (MB): peak = 920.820 ; gain = 251.168
+Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:56 . Memory (MB): peak = 920.820 ; gain = 616.785
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 368 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 400 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'cpu_wrap' is not ideal for floorplanning, since the cellview 'Idecode32' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 31 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
@@ -748,10 +763,10 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LD => LDCE (inverted pins: G): 31 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-116 Infos, 138 Warnings, 150 Critical Warnings and 0 Errors encountered.
+194 Infos, 139 Warnings, 45 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 915.234 ; gain = 622.223
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 920.820 ; gain = 628.289
 INFO: [Common 17-1381] The checkpoint 'D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/cpu_wrap.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file cpu_wrap_utilization_synth.rpt -pb cpu_wrap_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 915.234 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue May 18 13:10:11 2021...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 920.820 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed May 19 01:01:05 2021...

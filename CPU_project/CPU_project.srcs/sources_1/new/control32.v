@@ -21,7 +21,7 @@
 
 
 module control32(Opcode, Function_opcode, Jr, RegDST, ALUSrc, MemtoReg, RegWrite,
-                 MemWrite, Branch, nBranch, Jmp, Jal, I_format, Sftmd, ALUOp);
+                 MemWrite, Branch, nBranch, Jmp, Jal, I_format, Sftmd, ALUOp, syscall);
 input   [5:0]   Opcode;
 input   [5:0]   Function_opcode;
 output          Jr;
@@ -37,6 +37,7 @@ output          MemWrite;
 output          I_format;
 output          Sftmd;
 output  [1:0]   ALUOp;
+output          syscall;
 
 wire            R_format;
 
@@ -58,5 +59,7 @@ assign Sftmd = (((Function_opcode == 6'b00_0000) || (Function_opcode == 6'b00_01
                  || (Function_opcode == 6'b00_0011) || (Function_opcode == 6'b00_0111))
                 && R_format) ? 1'b1 : 1'b0;
 assign ALUOp = {(R_format || I_format), (Branch || nBranch)};
+assign syscall = (Opcode == 6'b111111) ? 1'b1 : 1'b0;
+
 
 endmodule

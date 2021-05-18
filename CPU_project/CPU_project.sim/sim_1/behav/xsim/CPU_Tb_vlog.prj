@@ -7,7 +7,7 @@ verilog xil_defaultlib  --include "../../../../CPU_project.srcs/sources_1/ip/cpu
 "../../../../CPU_project.srcs/sim_1/new/Ifetc32_Test.v" \
 "../../../../CPU_project.srcs/sources_1/new/control32.v" \
 "../../../../CPU_project.srcs/sources_1/new/dmemory32.v" \
-"../../../../CPU_project.srcs/sources_1/new/uart_read.v" \
+"../../../../CPU_project.srcs/sim_1/new/uart_read_Test.v" \
 "../../../../CPU_project.srcs/sim_1/new/CPU_Tb.v" \
 
 # compile glbl module

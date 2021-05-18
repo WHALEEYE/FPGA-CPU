@@ -29,8 +29,8 @@ output  [31:0]    io_output;
 
 // uart
 input             din;
-wire    [7:0]     dout;
-wire              dout_vld;
+wire    [31:0]    imem_write_data;
+wire    [31:0]    addr_pointer;
 
 //module clock
 wire              clock;
@@ -80,7 +80,7 @@ assign rst = reset | renew;
 
 Clock cpu_clk(clkin, clock);
 
-always @(negedge clock or posedge rst)
+always @(posedge clock or posedge rst)
 begin
     if(rst)
     begin
@@ -130,8 +130,8 @@ Ifetc32 cpu_ifetch(
             .Pause(Pause),
             .IF_ena(IF_ena),
             .renew(renew),
-            .dout(dout),
-            .dout_vld(dout_vld),
+            .addr_pointer(addr_pointer),
+            .imem_write_data(imem_write_data),
             .Instruction(Instruction),
             .branch_base_addr(branch_base_addr),
             .link_addr(link_addr)
@@ -152,7 +152,8 @@ control32 cpu_ctrl(
               .Jal(Jal),
               .I_format(I_format),
               .Sftmd(Sftmd),
-              .ALUOp(ALUOp)
+              .ALUOp(ALUOp),
+              .syscall(syscall)
           );
 
 Idecode32 cpu_decoder(
@@ -173,8 +174,7 @@ Idecode32 cpu_decoder(
               .WB_ena(WB_ena),
               .io_input(io_input),
               .io_output(io_output),
-              .Pause(Pause),
-              .syscall(syscall)
+              .Pause(Pause)
           );
 
 Executs32 cpu_alu(
@@ -204,12 +204,12 @@ dmemory32 cpu_ram(
               .read_data(read_data)
           );
 
-uart_read uread(
+uart_wrap uwrap(
               .reset(reset),
               .clock(clkin),
               .din(din),
-              .dout(dout),
-              .dout_vld(dout_vld)
+              .imem_write_data(imem_write_data),
+              .addr_pointer(addr_pointer)
           );
 
 

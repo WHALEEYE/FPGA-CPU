@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Wed May 12 22:58:31 2021
-// Host        : DESKTOP-V7DC3DF running 64-bit major release  (build 9200)
+// Date        : Tue May 18 20:21:20 2021
+// Host        : Orcinus-orca running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               d:/SUSTECH_programe_projects/CO_project/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk_sim_netlist.v
+//               D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk_sim_netlist.v
 // Design      : cpuclk
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -19,7 +19,7 @@ module cpuclk
   output clk_out1;
   input clk_in1;
 
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  wire clk_in1;
   wire clk_out1;
 
   cpuclk_cpuclk_clk_wiz inst
@@ -54,12 +54,7 @@ module cpuclk_cpuclk_clk_wiz
        (.I(clkfbout_cpuclk),
         .O(clkfbout_buf_cpuclk));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  (* CAPACITANCE = "DONT_CARE" *) 
-  (* IBUF_DELAY_VALUE = "0" *) 
-  (* IFD_DELAY_VALUE = "AUTO" *) 
-  IBUF #(
-    .IOSTANDARD("DEFAULT")) 
-    clkin1_ibufg
+  BUFG clkin1_bufg
        (.I(clk_in1),
         .O(clk_in1_cpuclk));
   (* BOX_TYPE = "PRIMITIVE" *) 
@@ -91,7 +86,7 @@ module cpuclk_cpuclk_clk_wiz
     .CLKOUT5_DIVIDE(1),
     .CLKOUT5_DUTY_CYCLE(0.500000),
     .CLKOUT5_PHASE(0.000000),
-    .COMPENSATION("ZHOLD"),
+    .COMPENSATION("BUF_IN"),
     .DIVCLK_DIVIDE(5),
     .IS_CLKINSEL_INVERTED(1'b0),
     .IS_PWRDWN_INVERTED(1'b0),

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Tue May 18 13:10:59 2021
+| Date         : Wed May 19 01:04:05 2021
 | Host         : Orcinus-orca running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file cpu_wrap_control_sets_placed.rpt
 | Design       : cpu_wrap
@@ -22,8 +22,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |   236 |
-| Unused register locations in slices containing registers |   914 |
+| Number of unique control sets                            |   255 |
+| Unused register locations in slices containing registers |  1033 |
 +----------------------------------------------------------+-------+
 
 
@@ -33,11 +33,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              35 |           17 |
-| No           | No                    | Yes                    |               3 |            2 |
+| No           | No                    | No                     |              35 |           18 |
+| No           | No                    | Yes                    |              18 |            7 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |            1184 |          703 |
+| Yes          | No                    | Yes                    |            1290 |          760 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -45,258 +45,282 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------------+------------------------------------------------+-------------------------------------------------+------------------+----------------+
-|             Clock Signal            |                  Enable Signal                 |                 Set/Reset Signal                | Slice Load Count | Bel Load Count |
-+-------------------------------------+------------------------------------------------+-------------------------------------------------+------------------+----------------+
-|  test_cpu/cpu_clk/clk/inst/clk_out1 |                                                | test_cpu/cpu_decoder/AR[0]                      |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                1 |              1 |
-| ~test_cpu/cpu_clk/clk/inst/clk_out1 |                                                |                                                 |                1 |              2 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 |                                                |                                                 |                2 |              2 |
-| ~test_cpu/cpu_clk/clk/inst/clk_out1 |                                                | test_cpu/cpu_decoder/AR[0]                      |                1 |              2 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0     | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                2 |              3 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                1 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0     | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0     | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31]_0[0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31]_0[0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31]_0[0] | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                2 |              4 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                5 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                5 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]    | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                5 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]    | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]    | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0     | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                5 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31]_0[0] | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31]_0[0] | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31]_0[0] | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31]_0[0] | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0]   | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0]   | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0]   | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0   |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                5 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers[4][12]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]    | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                1 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0]   | test_cpu/cpu_decoder/Registers[4][7]_i_1_n_0    |                4 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]    | test_cpu/cpu_decoder/Registers[4][30]_i_1_n_0   |                2 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0]   | test_cpu/cpu_decoder/Registers[4][3]_i_1_n_0    |                5 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]    | test_cpu/cpu_decoder/Registers[4][21]_i_1_n_0   |                3 |              5 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/imme_extend_reg[0][0]      | test_cpu/cpu_decoder/imme_extend[13]_i_1_n_0    |                2 |              7 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/E[0]                      | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |                9 |             31 |
-| ~test_cpu/cpu_decoder/Pause         |                                                |                                                 |               14 |             31 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[3][31][0]    | test_cpu/cpu_decoder/AR[0]                      |                8 |             32 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[0][31][0]    | test_cpu/cpu_decoder/AR[0]                      |               15 |             32 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[1][31][0]    | test_cpu/cpu_decoder/AR[0]                      |               11 |             32 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[2][31]_0[0]  | test_cpu/cpu_decoder/AR[0]                      |               20 |             32 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/counter[31]_i_1_n_0       | test_cpu/cpu_decoder/AR[0]                      |               13 |             33 |
-|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/imme_extend_reg[0][0]      | test_cpu/cpu_decoder/Registers_reg[25][31]_0[0] |               26 |             73 |
-+-------------------------------------+------------------------------------------------+-------------------------------------------------+------------------+----------------+
++-------------------------------------+----------------------------------------------+-----------------------------------------------+------------------+----------------+
+|             Clock Signal            |                 Enable Signal                |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
++-------------------------------------+----------------------------------------------+-----------------------------------------------+------------------+----------------+
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 |                                              | test_cpu/cpu_decoder/AS[0]                    |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 |                                              | test_cpu/cpu_decoder/AR[0]                    |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/counter[31]_i_1_n_0     | test_cpu/cpu_decoder/AR[0]                    |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0   | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              1 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 |                                              |                                               |                2 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                1 |              2 |
+| ~test_cpu/cpu_clk/clk/inst/clk_out1 |                                              |                                               |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              2 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0   | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                1 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  dout_vld_BUFG                      |                                              | reset_IBUF                                    |                1 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |                2 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              3 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0   | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0   | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/io_output[15]_i_1_n_0   | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  clkin_IBUF_BUFG                    | test_cpu/uwrap/ur/add_cnt1                   | reset_IBUF                                    |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/AR[0]                    |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                2 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/AR[0]                    |                4 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/Registers[4][10]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/Registers[4][6]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/Registers[4][2]_i_1_n_0  |                3 |              4 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[31][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[21][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[14][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[24][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                5 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[16][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[19][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[25][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[27][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[17][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[12][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[29][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[18][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[13][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[23][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                1 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[10][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[11][31][0] | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[8][31][0]  | test_cpu/cpu_decoder/Registers[4][25]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[20][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[26][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[9][31][0]  | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[28][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[22][31][0] | test_cpu/cpu_decoder/Registers[4][16]_i_1_n_0 |                2 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[30][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                3 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[15][31][0] | test_cpu/cpu_decoder/Registers[4][11]_i_1_n_0 |                5 |              5 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[2][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                6 |              7 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[0][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                7 |              7 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[3][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                5 |              7 |
+|  dout_vld_BUFG                      | test_cpu/uwrap/buffer[31]_i_1_n_0            | reset_IBUF                                    |                1 |              8 |
+|  dout_vld_BUFG                      | test_cpu/uwrap/buffer[15]_i_1_n_0            | reset_IBUF                                    |                1 |              8 |
+|  dout_vld_BUFG                      | test_cpu/uwrap/buffer[23]_i_1_n_0            | reset_IBUF                                    |                3 |              8 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[1][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                6 |             11 |
+|  clkin_IBUF_BUFG                    |                                              | reset_IBUF                                    |                4 |             13 |
+|  dout_vld_BUFG                      | test_cpu/uwrap/addr_pointer[13]_i_1_n_0      | reset_IBUF                                    |                5 |             14 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[4][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                7 |             15 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[7][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                8 |             15 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[5][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |                7 |             15 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[6][31][0]  | test_cpu/cpu_decoder/Registers[2][31]_i_3_n_0 |               10 |             15 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[1][31][0]  | test_cpu/cpu_decoder/Registers[2][29]_i_2_n_0 |                8 |             21 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[3][31][0]  | test_cpu/cpu_decoder/Registers[2][29]_i_2_n_0 |               11 |             25 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[0][31][0]  | test_cpu/cpu_decoder/Registers[2][29]_i_2_n_0 |               13 |             25 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/Registers_reg[2][31][0]  | test_cpu/cpu_decoder/Registers[2][29]_i_2_n_0 |               17 |             25 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/E[0]                    | test_cpu/cpu_decoder/AS[0]                    |                7 |             31 |
+| ~test_cpu/cpu_decoder/Pause         |                                              |                                               |               15 |             31 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_decoder/counter[31]_i_1_n_0     | test_cpu/cpu_decoder/Registers[4][29]_i_1_n_0 |               12 |             32 |
+|  dout_vld_BUFG                      | test_cpu/uwrap/imem_write_data[31]_i_1_n_0   | reset_IBUF                                    |                9 |             32 |
+|  clkin_IBUF_BUFG                    | test_cpu/uwrap/ur/flag_add                   | reset_IBUF                                    |                8 |             32 |
+|  test_cpu/cpu_clk/clk/inst/clk_out1 | test_cpu/cpu_ifetch/read_data_2_reg[0][0]    | test_cpu/cpu_decoder/AS[0]                    |               36 |             80 |
++-------------------------------------+----------------------------------------------+-----------------------------------------------+------------------+----------------+
 
 
 +--------+-----------------------+
 | Fanout | Number of ControlSets |
 +--------+-----------------------+
-| 1      |                    24 |
-| 2      |                     3 |
-| 3      |                     1 |
-| 4      |                   109 |
-| 5      |                    90 |
-| 7      |                     1 |
-| 16+    |                     8 |
+| 1      |                    12 |
+| 2      |                    10 |
+| 3      |                    37 |
+| 4      |                   142 |
+| 5      |                    31 |
+| 7      |                     3 |
+| 8      |                     3 |
+| 11     |                     1 |
+| 13     |                     1 |
+| 14     |                     1 |
+| 15     |                     4 |
+| 16+    |                    10 |
 +--------+-----------------------+
 
 
