@@ -6,7 +6,7 @@
 	
 	add $a0, $v0, $zero
 	srl $a2, $a0, 16
-	and $s1, $a2, 1
+	andi $s1, $a2, 1
 	srl $a2, $a2, 1
 	and $s2, $a2, 1
 	srl $a2, $a2, 1
@@ -16,12 +16,10 @@
 	beq $s2, 1, first_zero_second_one
 	beq $s1, 1, zzo
 	zzz:
-	addi $v1, $zero, 21845
-	jal output
-	jal zawaludo
-	sll $v1, $v1, 1
-	jal output
-	jal zawaludo
+	sll $s4, $a0, 24
+	srl $s4, $s4, 24
+	sll $s5, $a0, 16
+	srl $s5, $s5, 24
 	j Loop
 	
 	
@@ -29,17 +27,24 @@
 	beq $s1, 0, zoz
 	
 	zoo:
-	addi $v1, $v1, -1
+	add $s6, $s5, $zero
+	add $v1, $s4, $zero
+	judge:
+	slti $s7, $s6, 1
+	beq $s7, 0, shift_left 
 	jal output
-	jal zawaludo
 	j  Loop
 	
+	shift_left:
+	sll $v1, $v1, 1
+	addi $s6, $s6, -1
+	j judge
 	
 	first_bit_one: 
 	beq $s2, 0, first_one_second_zero
 	beq $s1, 0, ooz
+	xor $v1, $s4, $s5
 	jal output
-	jal zawaludo
 	j  Loop
 		
 	
@@ -47,44 +52,48 @@
 	beq $s1, 0, ozz
 	
 	ozo:
-	srl $v1, $v1, 1
+	slt $s6, $s5, $s4
+	beq $s6, 1, bigger 
+	addi $v1, $zero, 0
 	jal output 
-	jal zawaludo
 	j  Loop
+	
+	bigger:
+	addi $v1, $zero, 1
+	j Loop
+	
 	
 	ozz: 
-	sll $v1, $v1, 1
+	add $s6, $s5, $zero
+	add $v1, $s4, $zero
+	judge_2:
+	slti $s7, $s6, 1
+	beq $s7, 0, shift_right 
 	jal output
-	jal zawaludo
 	j  Loop
 	
+	shift_right:
+	srl $v1, $v1, 1
+	addi $s6, $s6, -1
+	j judge_2
+	
 	ooz:
-	sra $v1, $v1, 1
+	and $v1, $s4, $s5
 	jal output
-	jal zawaludo
 	j  Loop
 	
 	zoz:
-	addi $v1, $v1, 1
+	sub  $v1, $s4, $s5
 	jal output
-	jal zawaludo
 	j  Loop
 	
 	zzo:
-	add $v1, $a0, $zero
-	sll $v1, $v1, 16
-	srl $v1, $v1, 16
+	add $v1, $s4, $s5
 	jal output
-	jal zawaludo
 	j  Loop
 	
 	output:
 	add $a0, $v1, $zero
 	addi $v0, $zero, 1
 	syscall 
-	jr $ra
-	
-	zawaludo:
-	addi $v0, $zero, 111
-	syscall
 	jr $ra
