@@ -65,7 +65,6 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tfgg484-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
@@ -78,7 +77,7 @@ set rc [catch {
   read_ip -quiet D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk.xci
   read_ip -quiet D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/RAM/RAM.xci
   read_ip -quiet D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/IRAM/IRAM.xci
-  read_xdc D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc
+  read_xdc D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/CPU_cons.xdc
   link_design -top cpu_wrap -part xc7a100tfgg484-1
   close_msg_db -file init_design.pb
 } RESULT]

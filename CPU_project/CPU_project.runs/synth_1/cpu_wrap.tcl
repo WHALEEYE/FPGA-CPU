@@ -16,7 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -32,8 +31,7 @@ set_property ip_output_repo d:/Documents/SUSTech/Grade2/Computer_Organization/FP
 set_property ip_cache_permissions {read write} [current_project]
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_dmem.coe
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_imem.coe
-add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/Testcase_1_and_2.coe
-add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/bak.coe
+add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/Testcase_1_and_2.coe
 read_verilog -library xil_defaultlib {
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v
@@ -67,8 +65,8 @@ set_property used_in_implementation false [get_files -all d:/Documents/SUSTech/G
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc
-set_property used_in_implementation false [get_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc]
+read_xdc D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/CPU_cons.xdc
+set_property used_in_implementation false [get_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/CPU_cons.xdc]
 
 
 synth_design -top cpu_wrap -part xc7a100tfgg484-1

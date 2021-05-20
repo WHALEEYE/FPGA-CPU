@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file D:\Documents\SUSTech\Grade2\Computer_Organization\FPGA_CPU\CPU_project\CPU_project.runs\IRAM_synth_1/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: 没有权限

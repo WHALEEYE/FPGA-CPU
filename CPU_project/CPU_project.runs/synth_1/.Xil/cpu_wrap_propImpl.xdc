@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc rfile:../../../CPU_project.srcs/constrs_1/new/cpu_all_test_cons.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/constrs_1/new/CPU_cons.xdc rfile:../../../CPU_project.srcs/constrs_1/new/CPU_cons.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:53 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN R4 [get_ports renew]
 set_property src_info {type:XDC file:1 line:54 export:INPUT save:INPUT read:READ} [current_design]
