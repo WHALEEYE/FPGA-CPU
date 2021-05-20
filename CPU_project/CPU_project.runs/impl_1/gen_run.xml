@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621357393">
-  <File Type="OPT-HWDEF" Name="cpu_wrap.hwdef"/>
-  <File Type="PA-DCP" Name="cpu_wrap.dcp"/>
-  <File Type="OPT-DCP" Name="cpu_wrap_opt.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621449761">
+  <File Type="PWROPT-DCP" Name="cpu_wrap_pwropt.dcp"/>
   <File Type="ROUTE-PWR" Name="cpu_wrap_power_routed.rpt"/>
   <File Type="PA-TCL" Name="cpu_wrap.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="cpu_wrap_power_summary_routed.pb"/>
@@ -10,9 +8,10 @@
   <File Type="BG-DRC" Name="cpu_wrap.drc"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="cpu_wrap_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="cpu_wrap_timing_summary_init.rpt"/>
+  <File Type="OPT-HWDEF" Name="cpu_wrap.hwdef"/>
+  <File Type="OPT-DCP" Name="cpu_wrap_opt.dcp"/>
   <File Type="OPT-DRC" Name="cpu_wrap_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="cpu_wrap_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DCP" Name="cpu_wrap_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="cpu_wrap_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="cpu_wrap_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="cpu_wrap_placed.dcp"/>
@@ -87,6 +86,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Frequency_Divider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Idecode32.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -101,7 +107,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Tube.v">
+    <File Path="$PSRCDIR/sources_1/new/Tube_Show.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -143,6 +149,22 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Tube.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Tube_FPGA_Test.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/uart_mem_FPGA_Test.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
@@ -158,6 +180,12 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../Resources/coe_files/cpu_test_1_imem.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Resources/coe_files/final.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -197,8 +225,14 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/constrs_1/new/Tube_FPGA_Test_Cons.xdc">
+      <FileInfo>
+        <Attr Name="UserDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
-      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/cpu_all_test_cons.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>

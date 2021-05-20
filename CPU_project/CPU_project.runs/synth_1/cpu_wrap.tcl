@@ -17,7 +17,6 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tfgg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,13 +32,15 @@ set_property ip_output_repo d:/Documents/SUSTech/Grade2/Computer_Organization/FP
 set_property ip_cache_permissions {read write} [current_project]
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_dmem.coe
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_imem.coe
+add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/final.coe
 read_verilog -library xil_defaultlib {
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Executs32.v
+  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Frequency_Divider.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Idecode32.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Ifetc32.v
-  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube.v
+  D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Tube_Show.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/control32.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/dmemory32.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/uart_read.v

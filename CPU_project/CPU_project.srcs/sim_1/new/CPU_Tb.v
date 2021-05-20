@@ -235,7 +235,7 @@ uart_read_Test ureadtest(
 
 initial
 begin
-    io_input = 32'b10100000000000001111111111111101;
+    io_input = 32'b000000000000000001111111111111111;
     clock = 1'b1;
     reset = 1'b1;
     din = 1'b0;
@@ -243,7 +243,7 @@ begin
     #3
      reset = 1'b0;
     #5
-     renew = 1'b1;
+     renew = 1'b0;
     #22 din = 1'b1;
     #24 din = 1'b0;
 
