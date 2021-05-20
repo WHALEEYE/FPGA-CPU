@@ -32,8 +32,8 @@ set_property ip_output_repo d:/Documents/SUSTech/Grade2/Computer_Organization/FP
 set_property ip_cache_permissions {read write} [current_project]
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_dmem.coe
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_imem.coe
-add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/final.coe
-add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/test.coe
+add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/Testcase_1_and_2.coe
+add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/bak.coe
 read_verilog -library xil_defaultlib {
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v

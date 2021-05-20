@@ -9,7 +9,7 @@
     <Object name="xc7a100t_0" gui_info="">
       <Properties Property="FULL_PROBES.FILE" value=""/>
       <Properties Property="PROBES.FILE" value=""/>
-      <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/cpu_wrap.bit"/>
+      <Properties Property="PROGRAM.HW_BITSTREAM" value="D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/bitstream_files/Testcase_1_and_2.bit"/>
       <Properties Property="SLR.COUNT" value="c:/Users/10943/AppData/Roaming/Xilinx/Vivado/1"/>
     </Object>
   </ObjectList>
