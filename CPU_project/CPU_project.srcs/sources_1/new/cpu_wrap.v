@@ -35,15 +35,15 @@ output  [7:0]       seg_out;
 
 wire    [31:0]      io_input;
 wire    [31:0]      io_output;
-wire                led_reset;
-wire                tube_reset;
 wire                div_clk;
 
-assign tube_reset = reset | ~tube_out;
-assign led_reset = reset | tube_out;
+wire    [7:0]       seg_en_orig;
+wire    [7:0]       seg_out_orig;
 
 assign io_input = {senario2, 12'b0000_0000_0000, mode, number_in};
-assign led_out = led_reset ? 16'b0000_0000_0000_00000 : io_output[15:0];
+assign led_out = tube_out ? 16'b0000_0000_0000_00000 : io_output[15:0];
+assign seg_en = tube_out ? seg_en_orig : 8'b1111_1111;
+assign seg_out = tube_out ? seg_out_orig : 8'b1111_1111;
 
 CPU cpu_core(
         .io_input(io_input),
@@ -55,15 +55,15 @@ CPU cpu_core(
     );
 
 Tube_Show ts(
-              .rst(tube_reset),
+              .rst(reset),
               .clk(div_clk),
               .input_num(io_output),
-              .seg_en(seg_en),
-              .seg_out(seg_out)
+              .seg_en(seg_en_orig),
+              .seg_out(seg_out_orig)
           );
 
 Frequency_Divider fd(
-                      .rst(tube_reset),
+                      .rst(reset),
                       .clk(clkin),
                       .clk_out(div_clk)
                   );

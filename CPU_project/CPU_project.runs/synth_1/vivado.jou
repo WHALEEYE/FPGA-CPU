@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Thu May 20 02:44:27 2021
-# Process ID: 24404
+# Start of session at: Thu May 20 23:32:18 2021
+# Process ID: 20432
 # Current directory: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1
 # Command line: vivado.exe -log cpu_wrap.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_wrap.tcl
 # Log file: D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.runs/synth_1/cpu_wrap.vds

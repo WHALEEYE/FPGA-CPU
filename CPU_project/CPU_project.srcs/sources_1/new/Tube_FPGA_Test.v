@@ -29,12 +29,12 @@ wire          [31:0]          input_num;
 
 assign input_num = 32'd630063;
 
-Tube Tube_Test(
-         .clk(clkin),
-         .rst(rst),
-         .input_num(input_num),
-         .DIG(bit),
-         .Y(seg)
-     );
+Tube_Show Tube_Test(
+              .clk(clkin),
+              .rst(rst),
+              .input_num(input_num),
+              .DIG(bit),
+              .Y(seg)
+          );
 
 endmodule

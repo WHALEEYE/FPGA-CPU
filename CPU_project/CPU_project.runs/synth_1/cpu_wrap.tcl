@@ -32,7 +32,8 @@ set_property ip_output_repo d:/Documents/SUSTech/Grade2/Computer_Organization/FP
 set_property ip_cache_permissions {read write} [current_project]
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_dmem.coe
 add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/cpu_test_1_imem.coe
-add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/final.coe
+add_files D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/final.coe
+add_files d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/Resources/coe_files/test.coe
 read_verilog -library xil_defaultlib {
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/CPU.v
   D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/new/Clock.v
@@ -52,11 +53,11 @@ set_property used_in_implementation false [get_files -all d:/Documents/SUSTech/G
 set_property used_in_implementation false [get_files -all d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk.xdc]
 set_property used_in_implementation false [get_files -all d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/cpuclk/cpuclk_ooc.xdc]
 
-read_ip -quiet D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/IRAM/IRAM.xci
-set_property used_in_implementation false [get_files -all d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/IRAM/IRAM_ooc.xdc]
-
 read_ip -quiet D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/RAM/RAM.xci
 set_property used_in_implementation false [get_files -all d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/RAM/RAM_ooc.xdc]
+
+read_ip -quiet D:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/IRAM/IRAM.xci
+set_property used_in_implementation false [get_files -all d:/Documents/SUSTech/Grade2/Computer_Organization/FPGA_CPU/CPU_project/CPU_project.srcs/sources_1/ip/IRAM/IRAM_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
