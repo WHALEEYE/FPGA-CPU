@@ -45,7 +45,7 @@ assign led_reset = reset | tube_out;
 assign io_input = {senario2, 12'b0000_0000_0000, mode, number_in};
 assign led_out = led_reset ? 16'b0000_0000_0000_00000 : io_output[15:0];
 
-CPU test_cpu(
+CPU cpu_core(
         .io_input(io_input),
         .clkin(clkin),
         .reset(reset),
@@ -57,6 +57,7 @@ CPU test_cpu(
 Tube_Show ts(
               .rst(tube_reset),
               .clk(div_clk),
+              .input_num(io_output),
               .seg_en(seg_en),
               .seg_out(seg_out)
           );
