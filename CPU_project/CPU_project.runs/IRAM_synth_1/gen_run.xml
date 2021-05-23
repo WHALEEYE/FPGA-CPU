@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="IRAM_synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621532272">
+<GenRun Id="IRAM_synth_1" LaunchPart="xc7a100tfgg484-1" LaunchTime="1621656687">
   <File Type="PA-TCL" Name="IRAM.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="IRAM_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="IRAM_reports.tcl"/>
   <File Type="RDS-RDS" Name="IRAM.vds"/>
   <File Type="RDS-UTIL" Name="IRAM_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="IRAM_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="IRAM.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="IRAM_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="IRAM_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/IRAM">
     <File Path="$PSRCDIR/sources_1/ip/IRAM/IRAM.xci">
       <FileInfo>

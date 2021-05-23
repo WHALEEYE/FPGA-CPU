@@ -54,8 +54,6 @@ start:
                     add     $a1, $v0, $zero
                     sll     $a1, $a1, 16
                     srl     $a1, $a1, 16
-                    srl     $a2, $a1, 15
-                    sll     $a2, $a2, 15
                     add     $a0, $a1, $zero
                     jal     output
                     j       start
@@ -64,17 +62,19 @@ start:
                 beq     $s1, $t0, test_1_011
 
                 test_1_010:     #add 1
-                    addi    $a1, $a1, 1
                     add     $a0, $a1, $zero
                     jal     output
                     jal     pause
+                    addi    $a1, $a1, 1
+                    jal     output
                     j       start
 
                 test_1_011:     #sub 1
-                    addi    $a1, $a1, -1
                     add     $a0, $a1, $zero
                     jal     output
                     jal     pause
+                    addi    $a1, $a1, -1
+                    jal     output
                     j       start
 
         test_1_1XX:
@@ -84,28 +84,32 @@ start:
                 beq     $s1, $t0, test_1_101
 
                 test_1_100:     #sll 1
-                    sll     $a1, $a1, 1
                     add     $a0, $a1, $zero
                     jal     output
                     jal     pause
+                    sll     $a1, $a1, 1
+                    jal     output
                     j       start
 
                 test_1_101:     #srl 1
-                    srl     $a1, $a1, 1
                     add     $a0, $a1, $zero
                     jal     output
                     jal     pause
+                    sll     $a1, $a1, 15
+                    srl     $a1, $a1, 16
+                    jal     output
                     j       start
 
             test_1_11X:
                 beq     $s1, $t0, test_1_111
 
                 test_1_110:     #sra 1
-                    srl     $a1, $a1, 1
-                    add     $a1, $a1, $a2
                     add     $a0, $a1, $zero
                     jal     output
                     jal     pause
+                    sll     $a1, $a1, 15
+                    sra     $a1, $a1, 16
+                    jal     output
                     j       start
 
                 test_1_111:     #nothing
