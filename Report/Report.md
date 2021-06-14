@@ -16,13 +16,13 @@ Our reset signal is high-sensitive, which means our CPU will be reset to initial
 
 #### (4) Interfaces
 
-Our CPU uses 23 switches, 17 LEDs, a 7-segment digital display tube as IO, and a UART transform interface.
+Our CPU uses 23 switches, 17 LEDs, a 7-segment digital display tube as IO, and a UART transmit interface.
 
 `K17` to `L21` is the 17 LEDs that used in outputting data.
 
 `Y9` is the reset switch, `W9` to `U6` is the 16 switches that used in inputting numbers, `W5` is the enable switch of 7-segment tube, `W6` is the enable switch of LED, `U5` is the switch used in switching test case 1 and test case 2, `T5`, `T4` and `R4` are the 3 switches used in switching mode in each test case.
 
-`W4` is the UART transform enable signal and `Y19` is the interface receiving UART data. Once the signal is high, all the sequential modules except the Instruction Memory will be reset. Then the Instruction Memory will be rewritten with the data that is transformed into FPGA through UART by `Y19`.
+`W4` is the UART transmit enable signal and `Y19` is the interface receiving UART data. Once the signal is high, all the sequential modules except the Instruction Memory will be reset. Then the Instruction Memory will be rewritten with the data that is transmitted into FPGA through UART by `Y19`.
 
 
 
@@ -74,7 +74,7 @@ input                     IF_ena;				// enable signal from FSA (see Part 5)
 
 // uart inputs
 input wire                renew;				// renew == 1 means CPU is rewriting instructions into memory
-input wire  [31:0]        imem_write_data;		// data transform into FPGA through UART
+input wire  [31:0]        imem_write_data;		// data transmitted into FPGA through UART
 input wire  [31:0]        addr_pointer;			// the address that a instruction from UART should be written to
 
 // outputs
@@ -191,14 +191,14 @@ Read data according to address at every positive edge. Write data to specific ad
 // inputs
 input                   reset;
 input                   clock;
-input                   din;				// data transformed through UART, 1 bit at one time
+input                   din;				// data transmitted through UART, 1 bit at one time
 
 // outputs
 output reg  [31:0]      imem_write_data;	// data that should be written to memories
 output reg  [31:0]      addr_pointer;		// the write address of a memory
 ```
 
-Receives the data transformed by UART through `Y19`, one bit at each time at positive edge, and it will save it until it get 32 bits.
+Receives the data transmitted by UART through `Y19`, one bit at each time at positive edge, and it will save it until it get 32 bits.
 
 Send the write data and the address to the memory, the write data always corresponds to the address.
 
