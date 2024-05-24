@@ -1,3 +1,3 @@
 # FPGA-CPU
 
-A CPU implementation based on Xillinx FPGA. 
+A Multi-Cycle CPU implementation based on Xillinx FPGA. Implementation detail are described in directory `Report`.
